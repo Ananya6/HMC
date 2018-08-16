@@ -1,0 +1,197 @@
+<h1>{{title}}</h1>
+{{# if success}}
+ <section>
+  <h2>Successful Validation</h2>
+</section>
+{{ else }}
+  {{# if errors}}
+  <section>
+    <ul>
+      {{# each errors }}
+       <li>{{this.msg}}</li>
+      {{/each}}
+    </ul>
+  </section>
+  {{/if}}
+  <form action="/submit" method="post">
+    <div class="input">
+      <label for='email'>E-Mail</label>
+      <input type="text" id="email" name="email">
+    </div>
+    <div class="input">
+      <label for='password'>Password</label>
+      <input type="password" id="password" name="password">
+    </div>
+    <div class="input">
+      <label for='conpassword'>Confirm PSW</label>
+      <input type="password" id="cpassword" name="cpassword">
+    </div>
+    <!-- <input type="text" name="id"/> -->
+    <button type="submit">Submit</button>
+  </form>
+{{/if}}
+<!-- <p>Welcome to {{title}}</p> -->
+<!-- {{#if condition}}
+ MET
+{{else}}
+ NOT MET
+{{/if}}
+
+{{# each anyArray}}
+{{ this }}
+{{/each}}
+
+{{# each anyArray as |val key|}}
+ {{key}}:{{ val}}
+{{/each}} -->
+
+
+<div class="modal" id="LoginModal" role="dialog">
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+        <div class="modal-header" style="padding:35px 30px;">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4><span class="glyphicon"></span> Login</h4>
+        </div>
+        <div class="modal-body" style="padding:40px 50px;">
+          <form role="form" method="post" action="/login">
+            <div class="form-group">
+              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
+              <input type="text" class="form-control" name="usrmob" placeholder="Enter Mobile">
+            </div>
+            <div class="form-group">
+              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+              <input type="password" class="form-control" name="pswL" placeholder="Enter password">
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="" checked>Remember me</label>
+            </div>
+              <button type="submit" class="btn btn-success btn-block">Login</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+
+          <p>Not a member? <a href="#">Sign Up</a></p>
+          <p>Forgot <a href="#">Password?</a></p>
+        </div>
+      </div>
+
+  </div>
+</div>
+
+
+
+<!-- <div class="modal " id="RegisterModal" role="dialog">
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+
+        </div>
+
+    </div>
+  </div> -->
+
+  <!-- <div class="modal fade" id="CartModal" tabindex="-1" role="dialog" aria-labelledby="cartModalTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                  <div class="close">
+                      <button type="button" class="closebtn" data-dismiss="modal" aria-label="Close"><img class="closeimg" src="./Images/cancel button.png" alt="">
+                      </button>
+                  </div>
+              <div class="modalheader  ">
+
+              </div>
+
+              <div class="modal-body">
+
+                      <h5 class="modal-title text-center" id="exampleModalCenterTitle">My Cart</h5>
+                      <hr>
+                      <div class="row">
+
+                          <div class="col">
+                              <div class="imgdiv">
+                                  <img src="./Images/1.jpg" class="img-fluid cart-img" alt="ff" >
+                              </div>
+                          </div>
+
+                          <div class="col">
+
+                                  <div class="row">
+                                      <h5 class="text-left">Hawaiian chicken Burger</h5>
+                                      <div class="input-group inputdiv">
+                                      <span class="input-group-btn">
+                                          <button type="button" class="quantity-left-minus minus" onclick="subhandler({index})"  data-type="minus" data-field="">
+                                          <span id="sign" class="fas fa-minus"></span>
+                                          </button>
+                                      </span>
+                                      <input class="text-center" type="text" id="quantity-${index}" name="quantity" min="0" max="100">
+                                      <span class="input-group-btn">
+                                          <button type="button" class="quantity-right-plus plus" onclick="addhandler({index})"  data-type="plus" data-field="">
+                                              <span id="sign" class="fas fa-plus"></span>
+                                          </button>
+                                      </span>
+                                      </div>
+                                      <p class="text-left price">Price: <span class="rupees">&#8377;255.00</span> </p>
+
+                                  </div>
+                                  <div class="removebutton d-flex  align-items-end">
+                                      <button type="button" class=" remove" data-dismiss="modal">REMOVE</button>
+                                  </div>
+
+
+
+                          </div>
+
+
+                      </div>
+
+                      <div class="row item-2">
+
+                              <div class="col imagecol">
+                                  <img src="./images/burger2.jpg" class="img-fluid cart-img" alt="ff" >
+                              </div>
+
+                              <div class="col">
+
+                                      <div class="row ">
+                                          <h5 class="text-left">Hawaiian chicken Burger</h5>
+                                          <div class="input-group inputdiv">
+                                          <span class="input-group-btn">
+                                              <button type="button" class="quantity-left-minus minus" onclick="subhandler({index})"  data-type="minus" data-field="">
+                                              <span id="sign" class="fas fa-minus"></span>
+                                              </button>
+                                          </span>
+                                          <input class="text-center" type="text" id="quantity-${index}" name="quantity" min="0" max="100">
+                                          <span class="input-group-btn">
+                                              <button type="button" class="quantity-right-plus plus" onclick="addhandler({index}) "  data-type="plus" data-field="">
+                                                  <span id="sign" class="fas fa-plus"></span>
+                                              </button>
+                                          </span>
+                                          </div>
+                                          <p class="text-left price">Price: <span class="rupees">&#8377;255.00</span> </p>
+                                      </div>
+                                      <div class=" removebutton">
+                                          <button type="button" class=" remove2 " data-dismiss="modal">REMOVE</button>
+                                      </div>
+                              </div>
+
+
+                          </div>
+                          <hr>
+                          <div class="d-flex justify-content-end">
+                              <p class="text-left price">TOTAL: <span class="rupees">&#8377;255.00</span> </p>
+                          </div>
+
+
+                      <div class="d-flex justify-content-center">
+                          <button type="button" class=" btn-success checkout" data-dismiss="modal">CHECKOUT</button>
+                      </div>
+
+              </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+</div> -->

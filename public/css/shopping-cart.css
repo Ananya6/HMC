@@ -1,0 +1,236 @@
+.modal-content{
+    padding: 10px;
+    border-radius: 0;
+}
+
+.modalheader{
+    border: dashed 1px black;
+    border-radius: 0;
+}
+
+.closebtn{
+    /* width: 30px; */
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    background-color: #fff;
+    margin: 5px;
+    z-index: 5;
+}
+
+.closeimg:hover{
+    cursor: pointer;
+}
+
+hr{
+    border: solid 1px lightgray;
+}
+
+.modal-header{
+    padding: 0 !important;
+    border-bottom: none;
+    border-top-left-radius: none;
+    border-top-right-radius: none;
+}
+
+.modal-body{
+    display: inline-block;
+    padding-top: 0;
+    margin: 10px 10px 10px 10px;
+}
+
+.imgdiv{
+    width: 100%;
+    height: auto;
+}
+
+.inputdiv{
+    background-color: #f6fafd;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    padding: 8px 8px;
+    align-items: center;
+}
+
+input{
+    width: 50%;
+    background-color: #ebebeb;
+    border: solid 1px black;
+    height: 30px;
+    margin: 0 10px;
+
+}
+
+span.input-group-btn button{
+    display: flex;
+    align-items: center;
+}
+
+.minus, .plus{
+    background-color: #028958;
+    width: 18px;
+    height: 18px;
+    border: none;
+    color: darkgreen;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#sign{
+    color: #ffffff;
+    width: 18px;
+    height: 18px;
+}
+
+.price{
+    margin-top: 10px;
+}
+
+.rupees{
+    font-weight: bold;
+    padding:  0 10px;
+    background-color: #f6fafd;
+}
+
+.removebutton{
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.remove{
+    border: solid 1px #0f7e4c;
+    background-color: #0f7e4c;
+    color: #ffffff;
+    padding: 0 30px;
+    align-self: flex-end;
+}
+
+.remove2{
+    background-color: #acacac;
+    border: solid 1px #acacac;
+    padding: 0 30px;
+}
+
+.card{
+    border: none;
+}
+
+.checkout{
+    border: solid 1px #0f7e4c;
+    background-color: #0f7e4c;
+    color: #ffffff;
+    margin: 30px 0 0 0 ;
+    padding: 0 50px;
+}
+
+.item-2{
+    margin-top: 30px;
+}
+
+
+.sno{
+    padding: 2px 10px;
+    background-color: #0f7e4c;
+    color: #fff;
+    margin-left: 10px;
+}
+
+#headingOne{
+    border: dashed 1px black;
+    background-color: transparent;
+    padding: 0;
+}
+
+#headingOne button{
+    color: black;
+    text-decoration: none;
+
+}
+
+.card-body{
+    margin: 5px 0;
+    padding: 0;
+}
+
+.form-check{
+    padding: 0;
+}
+
+ input.radio{
+    width: 2%;
+    display: inline-block;
+    padding: 1%;
+    height: auto;
+    border: #0f7e4c;
+
+}
+.inp{
+  padding: 3%;
+}
+
+.addresslable{
+    width: 100%;
+}
+
+.Corporate{
+
+    padding: 1% 3%;
+    /* border-bottom: 1px solid lightgray; */
+
+    margin-bottom:2%;
+}
+.Corporate:hover{
+    background-color: #f5fafe;
+}
+
+.summaryinfo{
+    color: gray;
+}
+
+.payable{
+    color: #0f7e4c;
+}
+.mb-2{
+  margin: 1%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 576px){
+.modal-dialog {
+    max-width: 800px;
+    /* height: 100px; */
+    margin: 1.75rem auto;
+}
+}

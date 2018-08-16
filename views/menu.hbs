@@ -1,0 +1,429 @@
+<!-- <h1>{{title}}</title> -->
+<link rel="stylesheet" href="./css/menu.css">
+
+<div class="container">
+
+ <div class="row text-center">
+  <h2>MENU</h2>
+  <p>Select from our fresh meals as per your taste buds</p>
+</div>
+
+<div class="row mid">
+
+  <ul class="nav nav-pills nav-justified ">
+    <li class="active"><a data-toggle="pill" href="#home">BURGER</a></li>
+    <li><a data-toggle="pill" href="#salad">SALAD</a></li>
+    <li><a data-toggle="pill" href="#sandwich">SANDWICH</a></li>
+    <li><a data-toggle="pill" href="#smoothie">SMOOTHIE</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active " >
+
+      <ul class="nav nav-pills" >
+        <li class="active"><a data-toggle="pill" href="#allBurger">ALL</a></li>
+        <li><a data-toggle="pill" href="#vBurger">VEG</a></li>
+        <li><a data-toggle="pill" href="#nvBurger">NON-VEG</a></li>
+      </ul>
+
+
+        <div class="tab-content">
+            <div id="allBurger" class="tab-pane fade in active text-center">
+              {{# each allBurger}}
+                <div class=" col-md-4 col-sm-6 img-container-lg" >
+                <div class="row" >
+                  <img src="./images/{{this.ImageUrl}}" class="img-lg"/>
+                </div>
+                <div class="row padding-description">
+                <div class="item-desc " align="left">
+                  <div>
+                    {{#if this.Veg}}
+                      <img class="veg-mark" align="right" width="20px" src="./images/veg-mark.png"/>
+                    {{else}}
+                      <img class="non-veg-mark" align="right"  src="./images/non-veg-mark.png"/>
+                    {{/if}}
+                      <h4>{{this.ProductName}}</h4>
+                </div>
+                  <label>Nutritional Information</label>
+                  <div class="small-desc">
+                  <div id="cal">Calories: <span id="calValue">{{this.Calories}}</span>cal</div>
+                  <div id="splIng">Special Ingredient: <span>{{this.Ingredients}}</span></div>
+                </div>
+                  <hr class="hr-divider"/>
+                  <div class="clearfix menu-item-bottom">
+                    <span class="cost">&#8377;</span><span>{{this.PriceDisplay}}</span>
+                    <span ><button class="btn btn-xs green-button pull-right" align="right" data-toggle="modal" data-obj-id={{this._id}} data-target="#myModal">
+                        Add to cart</button></span>
+                  </div>
+
+                  </div>
+                  </div>
+                    </div>
+                  {{/each}}
+
+                </div>
+
+                <div id="vBurger" class="tab-pane fade text-center ">
+                  {{# each vegBurger}}
+                    <div class=" col-md-4 col-sm-6 img-container-lg" >
+                    <div class="row" >
+                      <img src="./images/{{this.ImageUrl}}" class="img-lg"/>
+                    </div>
+                    <div class="row padding-description">
+                    <div class="item-desc " align="left">
+                      <div>
+                          <img class="veg-mark" align="right" width="20px" src="./images/veg-mark.png"/>
+                          <h4>{{this.ProductName}}</h4>
+                    </div>
+                      <label>Nutritional Information</label>
+                      <div class="small-desc">
+                      <div id="cal">Calories: <span id="calValue">{{this.Calories}}</span>cal</div>
+                      <div id="splIng">Special Ingredient: <span>{{this.Ingredients}}</span></div>
+                    </div>
+                      <hr class="hr-divider"/>
+                      <div class="clearfix menu-item-bottom">
+                        <span class="cost">&#8377;</span><span>{{this.PriceDisplay}}</span>
+                        <span ><button class="btn btn-xs green-button pull-right" align="right" data-toggle="modal" data-obj-id={{this._id}} data-target="#myModal">
+                            Add to cart</button></span>
+                      </div>
+                      </div>
+                      </div>
+                      </div>
+                      {{/each}}
+
+                </div>
+
+
+                  <div id="nvBurger" class="tab-pane fade text-center ">
+                    {{# each nVegBurger}}
+                    <div class=" col-md-4 col-sm-6 img-container-lg" >
+                    <div class="row" >
+                      <img src="./images/{{this.ImageUrl}}" class="img-lg"/>
+                    </div>
+                    <div class="row padding-description">
+                    <div class="item-desc " align="left">
+                      <div>
+                          <img class="non-veg-mark" align="right"  src="./images/non-veg-mark.png"/>
+                          <h4>{{this.ProductName}}</h4>
+                    </div>
+                      <label>Nutritional Information</label>
+                      <div class="small-desc">
+                      <div id="cal">Calories: <span id="calValue">{{this.Calories}}</span>cal</div>
+                      <div id="splIng">Special Ingredient: <span>{{this.Ingredients}}</span></div>
+                    </div>
+                      <hr class="hr-divider"/>
+                      <div class="clearfix menu-item-bottom">
+                        <span class="cost">&#8377;</span><span>{{this.PriceDisplay}}</span>
+                        <span ><button class="btn btn-xs green-button pull-right" align="right" data-toggle="modal" data-obj-id={{this._id}} data-target="#myModal">
+                            Add to cart</button></span>
+                      </div>
+                      </div>
+                      </div>
+                      </div>
+                      {{/each}}
+                  </div>
+                </div>
+          </div>
+
+
+
+        <div id="salad" class="tab-pane fade">
+          <ul class="nav nav-pills" >
+            <li class="active"><a data-toggle="pill" href="#allSalad">ALL</a></li>
+            <li><a data-toggle="pill" href="#vSalad">VEG</a></li>
+            <li><a data-toggle="pill" href="#nvSalad">NON-VEG</a></li>
+          </ul>
+
+
+          <div class="tab-content">
+              <div id="allSalad" class="tab-pane fade in active text-center">
+                {{# each allSalad}}
+                  <div class=" col-md-4 col-sm-6 img-container-lg" >
+                  <div class="row" >
+                    <img src="./images/{{this.ImageUrl}}" class="img-lg"/>
+                  </div>
+                  <div class="row padding-description">
+                  <div class="item-desc " align="left">
+                    <div>
+                      {{#if this.Veg}}
+                        <img class="veg-mark" align="right" width="20px" src="./images/veg-mark.png"/>
+                      {{else}}
+                        <img class="non-veg-mark" align="right"  src="./images/non-veg-mark.png"/>
+                      {{/if}}
+                        <h4>{{this.ProductName}}</h4>
+                  </div>
+                    <label>Nutritional Information</label>
+                    <div class="small-desc">
+                    <div id="cal">Calories: <span id="calValue">{{this.Calories}}</span>cal</div>
+                    <div id="splIng">Special Ingredient: <span>{{this.Ingredients}}</span></div>
+                  </div>
+                    <hr class="hr-divider"/>
+                    <div class="clearfix menu-item-bottom">
+                      <span class="cost">&#8377;</span><span>{{this.PriceDisplay}}</span>
+                      <span ><button class="btn btn-xs green-button pull-right" align="right" data-toggle="modal" data-obj-id={{this._id}} data-target="#myModal">
+                          Add to cart</button></span>
+                    </div>
+
+                    </div>
+                    </div>
+                      </div>
+                    {{/each}}
+
+                  </div>
+
+                  <div id="vSalad" class="tab-pane fade text-center ">
+                    {{# each vegSalad}}
+                      <div class=" col-md-4 col-sm-6 img-container-lg" >
+                      <div class="row" >
+                        <img src="./images/{{this.ImageUrl}}" class="img-lg"/>
+                      </div>
+                      <div class="row padding-description">
+                      <div class="item-desc " align="left">
+                        <div>
+                            <img class="veg-mark" align="right" width="20px" src="./images/veg-mark.png"/>
+                            <h4>{{this.ProductName}}</h4>
+                      </div>
+                        <label>Nutritional Information</label>
+                        <div class="small-desc">
+                        <div id="cal">Calories: <span id="calValue">{{this.Calories}}</span>cal</div>
+                        <div id="splIng">Special Ingredient: <span>{{this.Ingredients}}</span></div>
+                      </div>
+                        <hr class="hr-divider"/>
+                        <div class="clearfix menu-item-bottom">
+                          <span class="cost">&#8377;</span><span>{{this.PriceDisplay}}</span>
+                          <span ><button class="btn btn-xs green-button pull-right" align="right" data-toggle="modal" data-obj-id={{this._id}} data-target="#myModal">
+                              Add to cart</button></span>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                        {{/each}}
+
+                  </div>
+
+
+                    <div id="nvSalad" class="tab-pane fade text-center ">
+                      {{# each nVegSalad}}
+                      <div class=" col-md-4 col-sm-6 img-container-lg" >
+                      <div class="row" >
+                        <img src="./images/{{this.ImageUrl}}" class="img-lg"/>
+                      </div>
+                      <div class="row padding-description">
+                      <div class="item-desc " align="left">
+                        <div>
+                            <img class="non-veg-mark" align="right"  src="./images/non-veg-mark.png"/>
+                            <h4>{{this.ProductName}}</h4>
+                      </div>
+                        <label>Nutritional Information</label>
+                        <div class="small-desc">
+                        <div id="cal">Calories: <span id="calValue">{{this.Calories}}</span>cal</div>
+                        <div id="splIng">Special Ingredient: <span>{{this.Ingredients}}</span></div>
+                      </div>
+                        <hr class="hr-divider"/>
+                        <div class="clearfix menu-item-bottom">
+                          <span class="cost">&#8377;</span><span>{{this.PriceDisplay}}</span>
+                          <span ><button class="btn btn-xs green-button pull-right" align="right" data-toggle="modal" data-obj-id={{this._id}} data-target="#myModal">
+                              Add to cart</button></span>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                  </div>
+
+        </div>
+        <div id="sandwich" class="tab-pane fade">
+          <ul class="nav nav-pills " align="right" >
+            <li class="active"><a data-toggle="pill" href="#allSandwich">ALL</a></li>
+            <li><a data-toggle="pill" href="#vSandwich">VEG</a></li>
+            <li><a data-toggle="pill" href="#nvSandwich">NON-VEG</a></li>
+          </ul>
+
+          <div class="tab-content">
+            <div id="allSandwich" class="tab-pane fade in active text-center">
+              {{# each allSandwich}}
+                <div class=" col-md-4 col-sm-6 img-container-lg" >
+                <div class="row" >
+                  <img src="./images/{{this.ImageUrl}}" class="img-lg"/>
+                </div>
+                <div class="row padding-description">
+                <div class="item-desc " align="left">
+                  <div>
+                    {{#if this.Veg}}
+                      <img class="veg-mark" align="right" width="20px" src="./images/veg-mark.png"/>
+                    {{else}}
+                      <img class="non-veg-mark" align="right"  src="./images/non-veg-mark.png"/>
+                    {{/if}}
+                      <h4>{{this.ProductName}}</h4>
+                </div>
+                  <label>Nutritional Information</label>
+                  <div class="small-desc">
+                  <div id="cal">Calories: <span id="calValue">{{this.Calories}}</span>cal</div>
+                  <div id="splIng">Special Ingredient: <span>{{this.Ingredients}}</span></div>
+                </div>
+                  <hr class="hr-divider"/>
+                  <div class="clearfix menu-item-bottom">
+                    <span class="cost">&#8377;</span><span>{{this.PriceDisplay}}</span>
+                    <span ><button class="btn btn-xs green-button pull-right" align="right" data-toggle="modal" data-obj-id={{this._id}} data-target="#myModal">
+                        Add to cart</button></span>
+                  </div>
+
+                  </div>
+                  </div>
+                    </div>
+                  {{/each}}
+
+                </div>
+
+                <div id="vSandwich" class="tab-pane fade text-center ">
+                  {{# each vegSandwich}}
+                    <div class=" col-md-4 col-sm-6 img-container-lg" >
+                    <div class="row" >
+                      <img src="./images/{{this.ImageUrl}}" class="img-lg"/>
+                    </div>
+                    <div class="row padding-description">
+                    <div class="item-desc " align="left">
+                      <div>
+                          <img class="veg-mark" align="right" width="20px" src="./images/veg-mark.png"/>
+                          <h4>{{this.ProductName}}</h4>
+                    </div>
+                      <label>Nutritional Information</label>
+                      <div class="small-desc">
+                      <div id="cal">Calories: <span id="calValue">{{this.Calories}}</span>cal</div>
+                      <div id="splIng">Special Ingredient: <span>{{this.Ingredients}}</span></div>
+                    </div>
+                      <hr class="hr-divider"/>
+                      <div class="clearfix menu-item-bottom">
+                        <span class="cost">&#8377;</span><span>{{this.PriceDisplay}}</span>
+                        <span ><button class="btn btn-xs green-button pull-right" align="right" data-toggle="modal" data-obj-id={{this._id}} data-target="#myModal">
+                            Add to cart</button></span>
+                      </div>
+                      </div>
+                      </div>
+                      </div>
+                      {{/each}}
+
+                </div>
+
+
+                  <div id="nvSandwich" class="tab-pane fade text-center ">
+                    {{# each nVegSandwich}}
+                    <div class=" col-md-4 col-sm-6 img-container-lg" >
+                    <div class="row" >
+                      <img src="./images/{{this.ImageUrl}}" class="img-lg"/>
+                    </div>
+                    <div class="row padding-description">
+                    <div class="item-desc " align="left">
+                      <div>
+                          <img class="non-veg-mark" align="right"  src="./images/non-veg-mark.png"/>
+                          <h4>{{this.ProductName}}</h4>
+                    </div>
+                      <label>Nutritional Information</label>
+                      <div class="small-desc">
+                      <div id="cal">Calories: <span id="calValue">{{this.Calories}}</span>cal</div>
+                      <div id="splIng">Special Ingredient: <span>{{this.Ingredients}}</span></div>
+                    </div>
+                      <hr class="hr-divider"/>
+                      <div class="clearfix menu-item-bottom">
+                        <span class="cost">&#8377;</span><span>{{this.PriceDisplay}}</span>
+                        <span ><button class="btn btn-xs green-button pull-right" align="right" data-toggle="modal" data-obj-id={{this._id}} data-target="#myModal">
+                            Add to cart</button></span>
+                      </div>
+                      </div>
+                      </div>
+                      </div>
+                      {{/each}}
+                  </div>
+              </div>
+        </div>
+        <div id="smoothie" class="tab-pane fade text-center" style="padding-top:4%">
+          {{# each allSmoothie}}
+          <div class=" col-md-4 col-sm-6 img-container-lg" >
+          <div class="row" >
+            <img src="./images/{{this.ImageUrl}}" class="img-lg"/>
+          </div>
+          <div class="row padding-description">
+          <div class="item-desc " align="left">
+            <div>
+                <h4>{{this.ProductName}}</h4>
+          </div>
+            <label>Nutritional Information</label>
+            <div class="small-desc">
+            <div id="cal">Calories: <span id="calValue">{{this.Calories}}</span>cal</div>
+            <div id="splIng">Special Ingredient: <span>{{this.Ingredients}}</span></div>
+          </div>
+            <hr class="hr-divider"/>
+            <div class="clearfix menu-item-bottom">
+              <span class="cost">&#8377;</span><span>{{this.PriceDisplay}}</span>
+              <span ><button class="btn btn-xs green-button pull-right" align="right" data-toggle="modal" data-obj-id={{this._id}} data-target="#myModal">
+                  Add to cart</button></span>
+            </div>
+            </div>
+            </div>
+            </div>
+            {{/each}}
+        </div>
+      <div class="modal fade " id="myModal" role="dialog">
+       <div class="modal-dialog ">
+          <div class="modal-content ">
+           <div class="modal-header">
+               <button type="button" class="close" align="right" data-dismiss="modal">&times;</button>
+             <h3>Would you like to :
+
+            </h3>
+
+           </div>
+           <div class="modal-body">
+             <!-- <div class="hr-container">
+
+             <button type="button" class="close" data-dismiss="modal" style="color:black">&times;</button>
+             </div> -->
+            <div class="row text-center">
+              <form role="form" method="post" action="/customize">
+                <input type="text" name="ObjectId" value=""/>
+                <button class="btn btn-md btn-success" type="submit" align="center" >
+                       Customize your meal</button>
+              </form>
+            </div>
+                <div class="hr-container">
+                 <h4 class="hr-line"><span class="hr-line-span">OR</span></h4>
+               </div>
+               <div class="row text-center">
+
+             <button class="btn btn-md btn-success" onclick="showMessage()">
+                 <a href="">Add to cart</a></button>
+
+              </div>
+               </div>
+             </div>
+            </div>
+          </div>
+      <div id="snackbar">Added to Cart</div>
+        </div>
+
+      </div>
+
+  </div>
+
+
+  <script>
+    function showMessage() {
+        var x = document.getElementById("snackbar");
+        x.className = "show";
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 4000);
+    }
+    $('#myModal').on('show.bs.modal', function(e) {
+
+    var sentObjId= $(e.relatedTarget).data('obj-id');
+
+    $(e.currentTarget).find('input[name="ObjectId"]').val(sentObjId);
+    $(e.currentTarget).find('a[href]').attr('href', '/add-to-cart/'+sentObjId);
+});
+
+//     $(document).on("click", ".sendToModal", function () {
+//      var sentObjId = $(this).data('id');
+//      console.log(sentObjId);
+//      $(".modal-body #ObjectId").val( sentObjId );
+// });
+</script>

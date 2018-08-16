@@ -1,0 +1,287 @@
+<link rel="stylesheet" href="./css/shopping-cart.css">
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-8 col-xs-offset-2" >
+
+            <div class="accordion " id="accordionExample">
+                <div class="card mb-2">
+                    <div class="card-header " id="headingOne">
+                        <h5 class="mb-0 d-flex align-items-center">
+                            <span class="sno">
+                                1.
+                            </span>
+                            <button class="btn btn-link " id="pickup" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                PICK UP ADDRESS
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="collapseOne" class="collapse bdy" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body ">
+
+                            <div class="Corporate">
+                                <div class="form-check d-flex justify-content-start align-items-center " id="addrForm">
+                                   <input class="radio" type="radio" data-toggle="collapse" data-target="#collapseButton1" aria-expanded="true" aria-controls="collapseButton1"
+                                      name="exampleRadios"  id="addr1" value="Corporate Name 1" >
+                                 Corporate Name 1  </div>
+
+                               <div id="collapseButton1" class="pickup collapse">
+                                   <button class="remove py-2 ml-4 my-2">PICK UP FROM HERE</button>
+                               </div>
+                             </div>
+
+                               <div class="Corporate">
+                                   <div class="form-check d-flex justify-content-start align-items-center ">
+                                       <input class="radio" type="radio" data-toggle="collapse" data-target="#collapseButton2" aria-expanded="true" aria-controls="collapseButton2"
+                                         name="exampleRadios"  id="addr2" value=" Corporate Name 2 ">
+                                 Corporate Name 2   </div>
+
+                                  <div id="collapseButton2" class="pickup collapse">
+                                      <button class="remove py-2 ml-4 my-2">PICK UP FROM HERE</button>
+                                  </div>
+
+                                </div>
+                                <div class="Corporate">
+                                    <div class="form-check d-flex justify-content-start align-items-center ">
+                                        <input class="radio" type="radio" data-toggle="collapse" data-target="#collapseButton3" aria-expanded="true" aria-controls="collapseButton3"
+                                          name="exampleRadios"  id="addr3" value=" Corporate Name 3 " >
+                                   Corporate Name 3   </div>
+
+                                   <div id="collapseButton3" class="pickup collapse">
+                                       <button class="remove py-2 ml-4 my-2">PICK UP FROM HERE</button>
+                                   </div>
+
+                                 </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                <div class="card mb-2" >
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0 d-flex align-items-center">
+                            <span class="sno">
+                                2.
+                            </span>
+                            <button class="btn btn-link " id="time" type="button" data-toggle="collapse" data-target="#collapseTime" aria-expanded="true" aria-controls="collapseTime">
+                                TIME
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="collapseTime" class="collapse bdy" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body ">
+
+                            <div class="time">
+                                <div class="form-check d-flex justify-content-start align-items-center " id="timingForm">
+                                  <span class="inp"> <input class="radio" type="radio" name="timing" value="9AM - 11AM" checked />  9AM - 11AM</span>
+                                  <span class="inp">  <input class="radio" type="radio" name="timing" value="11AM - 1AM"> 11AM - 1PM</span>
+                                  <span class="inp">  <input class="radio" type="radio" name="timing"  value="1AM - 3AM">  1AM - 3AM</span>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-2">
+                    <div class="card-header " id="headingOne">
+                        <h5 class="mb-0 d-flex align-items-center">
+                            <span class="sno">
+                                3.
+                            </span>
+                            <button class="btn btn-link " type="button" id="orderSummary" data-toggle="collapse" data-target="#collapseSummary" aria-expanded="true" aria-controls="collapseSummary">
+                              ORDER SUMMARY
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="collapseSummary" class="collapse bdy" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body ">
+
+                            <div class="summary">
+                                <div class="form-check d-flex justify-content-start align-items-center ">
+                                    <div class="container">
+                                        <div class="row d-flex justify-content-center">
+                                            <div class="col-xs-3">
+                                                <p class="summaryinfo">Total</p>
+                                                <p class="summaryinfo">(-) Product Discount</p>
+                                                <p class="summaryinfo">Base Price</p>
+                                                <p class="summaryinfo">CGST + SGST@5%</p>
+                                                <h4 class="payable">Total Payable</h4>
+                                            </div>
+                                            <div class="col-xs-3 ">
+                                                <p class="summaryinfo" >&#8377;<span id="total" >{{total}}</span></p>
+                                                <p class="summaryinfo" >&#8377;<span id="discount">{{discount}}</p>
+                                                <p class="summaryinfo" >&#8377;<span id="base"></span></p>
+                                                <p class="summaryinfo" >&#8377;<span id="tax"></span> </p>
+                                                <h4 class="payable" >&#8377;<span id="totalPayable"></span></h4>
+
+                                            </div>
+
+                                        </div>
+                                        <form class="ml-auto form" method="post" action="/checkout">
+                                            <input id="pickupSelected" name="pickupSelected" type="hidden"/>
+                                            <input id="timeSelected" name="timeSelected" type="hidden"/>
+                                            <input id="finalPrice" name="finalPrice" type="hidden"/>
+                                            <button class="remove mt-5 py-3 px-5" id="confirm" type="submit"  data-toggle="modal" data-target="#orderModal">CONFIRM ORDER</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="modal fade " id="orderModal" role="dialog">
+                     <div class="modal-dialog ">
+                        <div class="modal-content ">
+
+                        <div class="modal-body">
+                          <button type="button" class="close" align="right" style="color:black" data-dismiss="modal">&times;</button>
+                          <div class="row text-center">
+                            <h2>Thank You!</h2>
+                            <h3>Your Order has been placed</h3>
+                            <label class="green-btn">Have a great day</label>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+                <!-- <div class="modal" id="CartModal" >
+                 <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                       <div class="cart-border">
+                   <div class="modal-body content-padding">
+
+                    <div class="row text-center ">
+                    </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div> -->
+       </div>
+    </div>
+</div>
+<script>
+  $('#collapseButton1').click(function() {
+   $('#time').trigger('click');
+   $('#pickup').trigger('click');
+  // $("#accordion").accordion("option", "active", $("#panel2").index("#accordion div"));
+  });
+  $('#collapseButton2').click(function() {
+   $('#time').trigger('click');
+   $('#pickup').trigger('click');
+  // $("#accordion").accordion("option", "active", $("#panel2").index("#accordion div"));
+  });
+  $('#collapseButton3').click(function() {
+   $('#time').trigger('click');
+   $('#pickup').trigger('click');
+  // $("#accordion").accordion("option", "active", $("#panel2").index("#accordion div"));
+  });
+
+
+   $(document).ready(function () {
+
+      $('#pickup').trigger('click');
+    var tot=parseFloat($("#total").text()).toFixed(2);
+
+    var dis=parseFloat($("#discount").text()).toFixed(2);
+
+    var base=parseFloat(tot-dis);
+    var tx=parseFloat(Math.round(0.05*base)).toFixed(2);
+    var pay=parseFloat(base)+parseFloat(tx);
+    $("#base").text(function(n, c){
+                return base;
+            });
+    $("#tax").text(function(n, c){
+                return tx;
+                });
+    $("#totalPayable").text(function(n, c){
+                return pay;
+            });
+   // $("#OrderPlacedModal").modal('show');
+   });
+
+  $("#timingForm input[type='radio']").click(function(){
+     $('#orderSummary').trigger('click');
+      $('#time').trigger('click');
+  })
+
+   $('#collapseSummary').on('shown.bs.collapse', function () {
+         var time=$("#timingForm input[type='radio']:checked").val();
+         var address;
+         var price=$("#totalPayable").text();
+         if($('#addr1').is(':checked')) { address=$('#addr1').val(); }
+         if($('#addr2').is(':checked')) { address=$('#addr2').val(); }
+         if($('#addr3').is(':checked')) { address=($('#addr3').val()); }
+         $("#pickupSelected").val(function(n, c){
+                     return address;
+                 });
+         $("#timeSelected").val(function(n, c){
+                     return time;
+         });
+         $("#finalPrice").val(function(n, c){
+                     return price;
+         });
+
+           //'input[name=timing]:checked', '#timingForm').val());
+   });
+   // $('#OrderPlacedModal').modal({
+   //     backdrop: 'static',
+   //     keyboard: false
+   //   });
+
+
+  // var acc = document.getElementsByClassName("accordion");
+  // var panel = document.getElementsByClassName('bdy');
+  //
+  // for (var i = 0; i < acc.length; i++) {
+  //     acc[i].onclick = function() {
+  //         var setClasses = !this.classList.contains('active');
+  //         setClass(acc, 'active', 'remove');
+  //         setClass(panel, 'show', 'remove');
+  //
+  //         if (setClasses) {
+  //             this.classList.toggle("active");
+  //             this.nextElementSibling.classList.toggle("show");
+  //         }
+  //     }
+  // }
+  //
+  // function setClass(els, className, fnName) {
+  //     for (var i = 0; i < els.length; i++) {
+  //         els[i].classList[fnName](className);
+  //     }
+//   // }
+//   var acc = document.getElementsByClassName("accordion");
+// var i;
+//
+// for (i = 0; i < acc.length; i++) {
+//     acc[i].onclick = function() {
+//         hideAll();
+//
+//         this.classList.toggle("active");
+//         this.nextElementSibling.classList.toggle("show");
+//     }
+// }
+//
+// function hideAll() {
+//     for (i = 0; i < acc.length; i++) {
+//         acc[i].classList.toggle("active", false);
+//         acc[i].nextElementSibling.classList.toggle("show", false);
+//     }
+// }
+
+</script>

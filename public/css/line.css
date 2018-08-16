@@ -1,0 +1,23 @@
+.wrapper { width:500px; display:inline-block; position:relative; }
+.wrapper:before {
+   content:'';
+   position:absolute;
+  background:#900; width:2px; height:100%; margin: 0 auto; left:0; right:0; }
+.left { float:left;
+  width:190px;
+  margin-right:40px;
+  background:#ccc;
+   padding:20px; }
+.right { float:left; width:190px; background:#666; padding:20px; }
+input { display:block; width:100%; margin-bottom:10px; }
+.v-line {
+position: absolute;
+right: 0;
+top: 36%;
+background: white;
+ left: 0;
+margin: 0 auto;
+text-align: center;
+ width: 20px;
+ height: 20px;
+}

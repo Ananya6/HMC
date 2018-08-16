@@ -1,0 +1,230 @@
+
+<link rel="stylesheet" href="./css/style.css">
+{{> carousel}}
+<div class="container">
+  <div class="row text-center mid row-first" >
+
+      <h1>Offers</h1>
+      <p >With super delicious dishes, maintaining health just became a lot easier
+    <br />Check out our new Offers</p>
+
+    <div class="row justify-content-center" >
+      {{# each off}}
+      <div class=" col-md-4 col-sm-6 item-img-container" >
+      <div class="row">
+        <img src="./images/{{this.OfferPicUrl}}" class="item-img"/>
+      </div>
+      <div class="row" >
+      <div class="category offer spac" >
+        <button type="btn btn-xs" >Pre-Order</button>
+        </div>
+      </div>
+      </div>
+    {{/each}}
+    </div>
+  </div>
+
+
+
+
+    <div class="row text-center mid row-content" >
+      <hr />
+        <h1>Category</h1>
+        <p >Check out by categories</p>
+
+    <div class="row justify-content-center" >
+
+        <div class=" col-lg-3 col-sm-6 img-container-lg" >
+
+        <div class="row">
+          <img src="./pics/HMCpics/burger.jpg" class="img-lg"/>
+        </div>
+        <div class="row pad-category" >
+        <div class="category">
+          <p >BURGER</p>
+        </div>
+      </div>
+        </div>
+
+        <div class="col-lg-3 col-sm-6 img-container-lg" >
+          <div class="row ">
+          <img src="./pics/HMCpics/salad1.jpg" class="img-lg"/>
+        </div>
+          <div class="row pad-category" >
+          <div class="category" >
+            <p>SALAD</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-sm-6 img-container-lg" >
+
+          <div class="row">
+        <img src="./pics/HMCpics/sandwich.jpg" class="img-lg"/>
+        </div>
+        <div class="row pad-category" >
+          <div class="category">
+          <p >SANDWICH</p>
+        </div>
+     </div>
+    </div>
+    <div class="col-lg-3 col-sm-6 img-container-lg" >
+        <div class="row">
+      <img src="./pics/HMCpics/smoothie.jpg" class="img-lg"/>
+      </div>
+      <div class="row pad-category" >
+      <div class="category">
+        <p>SMOOTHIE</p>
+      </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+  <div class="row text-center mid row-content" >
+    <hr />
+      <h1>New Arrivals</h1>
+      <p >Check out new arrivals</p>
+
+    <div class="row justify-content-center" >
+      {{# each newArrival}}
+      <div class=" col-md-4 col-sm-6 img-container-lg" >
+      <div class="row">
+        <img src="./images/{{this.ImageUrl}}" class="img-lg"/>
+      </div>
+      <div class="row pad-category" >
+      <div class="category ">
+        <button type="btn btn-small spac">Pre-Order</button>
+      </div>
+    </div>
+      </div>
+      {{/each}}
+    </div>
+
+  </div>
+
+  <div class="row text-center mid row-content" >
+    <hr />
+      <h1>Why HMC</h1>
+
+    <div class="row text-center" >
+      <div class="col-md-3 col-sm-6" >
+        <div class="why">
+          Reason 1
+            <p>xyz</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6" >
+        <div class="why">
+          Reason 1
+            <p>xyz</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6" >
+        <div class="why">
+          Reason 1
+          <p>xyz</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6" >
+        <div class="why">
+          Reason 1
+            <p>xyz</p>
+        </div>
+      </div>
+  </div>
+</div>
+      <div class="row text-center mid row-content" >
+        <hr />
+      </div>
+      <div class="row text-center">
+       <h1>Let's hear it from <br/>our happy customer</h1>
+       <div class="col-md-3 col-sm-6" >
+         <div class="review-box row user1">
+           <h3 class="user1Name">Anand Mishra</h3>
+           <div class="stars-outer">
+          <div class="stars-inner"></div>
+          </div>
+          <div id="review" class="row">
+            Amazing food
+         </div>
+      </div>
+     </div>
+     <div class="col-md-3 col-sm-6" >
+       <div class="review-box row">
+         <h3 class="user2Name">JJoyce</h3>
+         <div class="stars-outer user2">
+        <div class="stars-inner"></div>
+        </div>
+        <div id="review" class="row">
+          Amazing food
+       </div>
+    </div>
+   </div>
+   <div class="col-md-3 col-sm-6" >
+     <div class="review-box row user3">
+       <h3 class="user3Name">Ankita </h3>
+       <div class="stars-outer">
+      <div class="stars-inner"></div>
+      </div>
+      <div id="review" class="row">
+        Amazing food
+     </div>
+  </div>
+ </div>
+ <div class="col-md-3 col-sm-6" >
+   <div class="review-box row user4">
+     <h3 class="user4Name">Supriya</h3>
+     <div class="stars-outer">
+    <div class="stars-inner"></div>
+    </div>
+    <div id="review" class="row">
+      Amazing food
+   </div>
+</div>
+</div>
+
+
+
+  </div>
+  </div>
+<script>
+
+
+// $(function(){
+//
+//
+//
+//   $("#main-carousel").load("main-carousel.html");
+// });
+
+const starTotal = 5;
+
+const ratings = {
+  user1 : 2.8,
+  user2 : 3.3,
+  user3 : 1.9,
+  user4 : 4.3,
+};
+
+for(const rating in ratings) {
+  // 2
+  const starPercentage = (ratings[rating] / starTotal) * 100;
+  // 3
+  const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
+  // 4
+  document.querySelector(`.${rating} .stars-inner`).style.width = starPercentageRounded;
+}
+
+$(document).ready(function(){
+    $("#login").click(function(){
+        $("#LoginModal").modal();
+    });
+});
+$(document).ready(function(){
+    $("#register").click(function(){
+        $("#RegisterModal").modal();
+    });
+});
+</script>

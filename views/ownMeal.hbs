@@ -1,0 +1,515 @@
+<link rel="stylesheet" href="./css/menu.css">
+
+<div class="container">
+
+ <div class="row text-center" sty>
+  <h2>CREATE YOUR OWN MEAL</h2>
+  <p>Now create your own perfect delicious meal.<br/>
+  Put everything acc to you. Your choice, our meal.</p>
+ </div>
+
+<div class="row mid" id="main">
+
+  <ul class="nav nav-pills nav-justified " role="tablist">
+    <li class="active"><a data-toggle="pill" href="#burger">BURGER</a></li>
+    <li><a data-toggle="pill" href="#salad">SALAD</a></li>
+    <li><a data-toggle="pill" href="#sandwich">SANDWICH</a></li>
+    <li><a data-toggle="pill" href="#smoothie">SMOOTHIE</a></li>
+  </ul>
+
+  <div class="tab-content" >
+
+              <div id ="burger" class="tab-pane fade in active">
+
+                <div class="row row-style">
+                         <div class="mainPanel col-xs-7 accordion" id="accordionBurger">
+
+
+                           {{#each burgers.CreateYourOwnMeal}}
+                            {{#each this}}
+
+                             <div class="card mb-2"  id="headingOne" >
+                                 <div class="card-header text-center ">
+
+                                     <div class="panel localepanel" type="button" data-toggle="collapse" data-target="#collapseBurger{{@key}}">
+                                        <h4><b>Choose your {{@key}}</b></h4>
+                                     </div>
+
+
+                                 </div>
+
+                                 <div id="collapseBurger{{@key}}" class="collapse bdy text-center" data-parent="#accordionBurger">
+                                   <div class="card-body ">
+
+                                       <div class="">
+                                         <div class="slider" style="display: block; height: auto;" id="Burger">
+                                           <ul class="choose-list" id="{{@key}}" >
+                                       {{#each this}}
+                                         <li id="{{@key}}">{{this}}</li>
+                                       {{/each}}
+
+                                        </ul>
+                                       </div>
+
+                                       </div>
+                                   </div>
+                                 </div>
+
+                               </div>
+                               {{/each}}
+                            {{/each}}
+                            {{#each burgers.Customizations}}
+                             {{#each this}}
+
+                              <div class="card mb-2"  id="headingOne" >
+                                  <div class="card-header text-center " id="headingOneInside">
+
+                                      <div class="panel localepanel" type="button" data-toggle="collapse" data-target="#collapseBurger{{@key}}">
+                                         <h4><b>Choose your {{@key}}</b></h4>
+                                      </div>
+
+
+                                  </div>
+
+                                  <div id="collapseBurger{{@key}}" class="collapse card-collapse bdy text-center" aria-labelledby="headingOne" data-parent="#accordionBurger">
+                                    <div class="card-body ">
+
+                                          <div class="slider" style="display: block; height: auto;" id="Burger">
+                                            <ul class="choose-list" id="{{@key}}" data-type="lettuce" >
+                                        {{#each this}}
+                                          <li id="{{@key}}">{{this}}</li>
+                                        {{/each}}
+
+                                         </ul>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                              </div>
+                              {{/each}}
+                           {{/each}}
+
+                         </div>
+                         <div class="sidePanel col-xs-5">
+
+                             <h4 class="sideHeader text-center">YOUR BURGER</h4>
+                             <ul class="list">
+                               {{#each burgers.CreateYourOwnMeal}}
+                                {{#each this}}
+                               <li class="info_size">
+                                 <div class="title col-sm-2">
+                                 <h4 class="title"><b>{{@key}}</b></h4>
+                                 </div>
+                                 <div class="results col-sm-10" id="Burger{{@key}}"></div>
+                               </li>
+                               {{/each}}
+                               {{/each}}
+                               {{#each burgers.Customizations}}
+                                {{#each this}}
+                               <li class="info_size row" >
+                                 <div class="title col-sm-2">
+                                  <h4 class="title"><b>{{@key}}</b></h4>
+                                 </div>
+                                 <div id="Burger{{@key}}" class="col-sm-10 results" align="right"></div>
+                               </li>
+                               {{/each}}
+                               {{/each}}
+                             </ul>
+                           </div>
+                         </div>
+              </div>
+
+              <div id="salad" class="tab-pane fade">
+                  <div class="row row-style">
+                   <div class="mainPanel col-xs-7">
+                     <div class="accordion" id="accordionSalad">
+
+                     {{#each salads.CreateYourOwnMeal}}
+                      {{#each this}}
+
+                       <div class="card mb-2"  id="headingOne" >
+                           <div class="card-header text-center ">
+
+                               <div class="panel localepanel"  type="button" data-toggle="collapse" data-target="#collapse{{@key}}" aria-expanded="true" >
+                                  <h4><b>Choose your {{@key}}</b></h4>
+                               </div>
+
+
+                           </div>
+
+                           <div id="collapse{{@key}}" class="collapse bdy text-center" data-parent="#accordionSalad">
+                             <div class="card-body ">
+
+                                 <div class="">
+                                   <div class="slider" style="display: block; height: auto;" id="Salad" >
+                                     <ul class="choose-list" id="{{@key}}" >
+                                 {{#each this}}
+                                   <li id="{{@key}}">{{this}}</li>
+                                 {{/each}}
+
+                                  </ul>
+                                 </div>
+
+                                 </div>
+                             </div>
+                           </div>
+
+                         </div>
+                         {{/each}}
+                      {{/each}}
+                      {{#each salads.Customizations}}
+                       {{#each this}}
+
+                        <div class="card mb-2"  id="headingOne" >
+                            <div class="card-header text-center " id="headingOneInside">
+
+                                <div class="panel localepanel"  type="button" data-toggle="collapse" data-target="#collapse{{@key}}" aria-expanded="true" >
+                                   <h4><b>Choose your {{@key}}</b></h4>
+                                </div>
+
+
+                            </div>
+
+                            <div id="collapse{{@key}}" class="collapse bdy text-center" aria-labelledby="headingOne" data-parent="#accordionSalad">
+                              <div class="card-body ">
+
+
+                                    <div class="slider" style="display: block; height: auto;" id="Salad">
+                                      <ul class="choose-list" id="{{@key}}" data-type="lettuce" >
+                                  {{#each this}}
+                                    <li id="{{@key}}">{{this}}</li>
+                                  {{/each}}
+
+                                   </ul>
+                                  </div>
+                              </div>
+                            </div>
+
+                          </div>
+                          {{/each}}
+                       {{/each}}
+                       </div>
+                     </div>
+                     <div class="sidePanel col-xs-5" id="SaladPanel">
+
+                         <h4 class="sideHeader text-center">YOUR SALAD</h4>
+                        <form
+                         <ul class="list" id="SaladList">
+                           {{#each salads.CreateYourOwnMeal}}
+                            {{#each this}}
+                          <li class="info_size">
+                             <div class="title col-sm-2">
+                             <h4 class="title"><b>{{@key}}</b></h4>
+                             </div>
+                             <div class="results col-sm-10" id="Salad{{@key}}"></div>
+                           </li>
+                           {{/each}}
+                           {{/each}}
+                           {{#each salads.Customizations}}
+                            {{#each this}}
+                           <li class="info_size row" >
+                             <div class="title col-xs-2">
+                              <h4 class="title"><b>{{@key}}</b></h4>
+                             </div>
+                             <div id="Salad{{@key}}" class="col-xs-10 results" align="right"></div>
+                           </li>
+                           {{/each}}
+                           {{/each}}
+                         </ul>
+                         <form class="form text-center" id="formSalad" method="post" action="/own-add-to-cart">
+                            <!-- <input type="hidden"  id="custom1" name="custom1"/> -->
+                            <button class="butns btn-success" type="submit" >Add to Cart</button>
+                       </form>
+                       </div>
+
+                     </div>
+              </div>
+
+              <div id="sandwich" class="tab-pane fade">
+                  <div class="row row-style">
+                   <div class="mainPanel col-xs-7">
+                     <div class="accordion" id="accordionSandwich">
+
+
+                     {{#each sandwiches.CreateYourOwnMeal}}
+                      {{#each this}}
+
+                       <div class="card mb-2"  id="headingOne" >
+                           <div class="card-header text-center ">
+
+                               <div class="panel localepanel"  type="button" data-toggle="collapse" data-target="#collapseSandwich{{@key}}" aria-expanded="true" >
+                                  <h4><b>Choose your {{@key}}</b></h4>
+                               </div>
+
+
+                           </div>
+
+                           <div id="collapseSandwich{{@key}}" class="collapse bdy text-center" aria-labelledby="headingOne" data-parent="#accordionSandwich">
+                             <div class="card-body ">
+
+                                 <div class="">
+                                   <div class="slider" style="display: block; height: auto;" id="Sandwich">
+                                     <ul class="choose-list" id="{{@key}}" >
+                                 {{#each this}}
+                                   <li id="{{@key}}">{{this}}</li>
+                                 {{/each}}
+
+                                  </ul>
+                                 </div>
+
+                                 </div>
+                             </div>
+                           </div>
+
+                         </div>
+                         {{/each}}
+                      {{/each}}
+                      {{#each sandwiches.Customizations}}
+                       {{#each this}}
+
+                        <div class="card mb-2"  id="headingOne" >
+                            <div class="card-header text-center ">
+
+                                <div class="panel localepanel" type="button" data-toggle="collapse" data-target="#collapseSandwich{{@key}}" aria-expanded="true" >
+                                   <h4><b>Choose your {{@key}}</b></h4>
+                                </div>
+
+
+                            </div>
+
+                            <div id="collapseSandwich{{@key}}" class="collapse bdy text-center" aria-labelledby="headingOne" data-parent="#accordionSandwich">
+                              <div class="card-body ">
+
+                                    <div class="slider" style="display: block; height: auto;" id="Sandwich">
+                                      <ul class="choose-list" id="{{@key}}" data-type="lettuce" >
+                                  {{#each this}}
+                                    <li id="{{@key}}">{{this}}</li>
+                                  {{/each}}
+
+                                   </ul>
+                                  </div>
+
+                              </div>
+                            </div>
+
+                          </div>
+                          {{/each}}
+                       {{/each}}
+                       </div>
+                     </div>
+                     <div class="sidePanel col-xs-5">
+
+                         <h4 class="sideHeader text-center">YOUR SANDWICH</h4>
+                         <ul class="list">
+                           {{#each sandwiches.CreateYourOwnMeal}}
+                            {{#each this}}
+                           <li class="info_size">
+                             <div class="title col-sm-2">
+                             <h4 class="title"><b>{{@key}}</b></h4>
+                             </div>
+                             <div class="results col-sm-10" id="Sandwich{{@key}}"></div>
+                           </li>
+                           {{/each}}
+                           {{/each}}
+                           {{#each sandwiches.Customizations}}
+                            {{#each this}}
+                           <li class="info_size row" >
+                             <div class="title col-sm-2">
+                              <h4 class="title"><b>{{@key}}</b></h4>
+                             </div>
+                             <div id="Sandwich{@key}}" class="col-sm-10 results" align="right"></div>
+                           </li>
+                           {{/each}}
+                           {{/each}}
+                         </ul>
+                       </div>
+
+                     </div>
+             </div>
+
+
+
+
+              <div id="smoothie" class="tab-pane fade">
+                        <div class="row row-style">
+                         <div class="mainPanel col-xs-7">
+                           <div class="accordion" id="accordionSmoothie">
+
+                           {{#each smoothies.CreateYourOwnMeal}}
+                            {{#each this}}
+
+                             <div class="card mb-2"  id="headingOne" >
+                                 <div class="card-header text-center ">
+
+                                     <div class="panel localepanel" type="button" data-toggle="collapse" data-target="#collapseSmoothie{{@key}}" aria-expanded="true">
+                                        <h4><b>Choose your {{@key}}</b></h4>
+                                     </div>
+
+
+                                 </div>
+
+                                 <div id="collapseSmoothie{{@key}}" class="collapse bdy text-center" data-parent="#accordionSmoothie">
+                                   <div class="card-body ">
+
+                                     <div class="slider" style="display: block; height: auto;" id="Smoothie">
+                                           <ul class="choose-list" id="{{@key}}" >
+                                       {{#each this}}
+                                         <li id="{{@key}}">{{this}}</li>
+                                       {{/each}}
+
+                                        </ul>
+                                       </div>
+
+                                   </div>
+                                 </div>
+
+                               </div>
+                               {{/each}}
+                            {{/each}}
+                            {{#each smoothies.Customizations}}
+                             {{#each this}}
+
+                          <div class="card mb-2"  id="headingOne" >
+                                  <div class="card-header text-center ">
+
+                                    <div class="panel localepanel"  type="button" data-toggle="collapse" data-target="#collapseSmoothie{{@key}}" aria-expanded="true">
+                                       <h4><b>Choose your {{@key}}</b></h4>
+                                    </div>
+
+                                </div>
+
+                                <div id="collapseSmoothie{{@key}}" class="collapse bdy text-center" data-parent="#accordionSmoothie">
+                                  <div class="card-body ">
+                                        <div class="slider" style="display: block; height: auto;" id="Smoothie">
+                                          <ul class="choose-list" id="{{@key}}" >
+                                      {{#each this}}
+                                        <li id="{{@key}}">{{this}}</li>
+                                      {{/each}}
+
+                                       </ul>
+                                      </div>
+
+                                  </div>
+                                  </div>
+
+                                </div>
+                                {{/each}}
+                             {{/each}}
+                             </div>
+                           </div>
+                           <div class="sidePanel col-xs-5">
+
+                               <h4 class="sideHeader text-center">YOUR SMOOTHIE</h4>
+                               <ul class="list">
+                                 {{#each smoothies.CreateYourOwnMeal}}
+                                  {{#each this}}
+                                <li class="info_size">
+                                   <div class="title col-sm-2">
+                                   <h4 class="title"><b>{{@key}}</b></h4>
+                                   </div>
+                                   <div class="results col-sm-10" id="Smoothie{{@key}}"></div>
+                                 </li>
+                                 {{/each}}
+                                 {{/each}}
+                                 {{#each smoothies.Customizations}}
+                                  {{#each this}}
+                                 <li class="info_size row" >
+                                   <div class="title col-sm-2">
+                                    <h4 class="title"><b>{{@key}}</b></h4>
+                                   </div>
+                                   <div id="Smoothie{{@key}}" class="col-sm-10 results" align="right"></div>
+                                 </li>
+                                 {{/each}}
+                                 {{/each}}
+                               </ul>
+                             </div>
+                        </div>
+              </div>
+
+       </div>
+     </div>
+   </div>
+
+<script>
+$(document).ready(function()
+  {
+
+// $(".nav-pills").pills();
+    // $('div.panel').click(function(e) {
+    //   $('div.panel').each(function(){
+    //     $(this).trigger('click');
+    //   });
+    //   var parentUL=e.target.parentNode.parentNode;
+    //   console.log(parentUL.id);
+    // });
+    // var arr=$('div.accordion').find('ul');
+    // $(arr).each(function(){
+    //   var customs=this.id;
+    //   $(div.sidePanel)
+    // });
+
+  });
+  $('ul.choose-list li').click(function(e)
+  {
+   // alert($(this).find("span.t").text());
+     var parentUL=e.target.parentNode;
+     var tabName=e.target.parentNode.parentNode.id;
+     console.log(tabName);
+     var rightPanelParent=$('div.sidePanel').find('#'+tabName+parentUL.id);
+     var toAdd=$(this).text();
+     //
+     // if($(this).hasClass("changed-li")){
+     //   console.log('changed li class');
+     //   // $(this).removeClass("changed-li");
+     //  console.log($("span:contains(toAdd)").class);
+     //   // $(rightPanelParent).find('span').remove();
+     // }
+   if(parentUL.id==='Base'||parentUL.id==='Size'){
+
+     var selectedLi=$(parentUL).find('li.changed-li').length;
+
+
+     console.log(selectedLi);
+
+     if(selectedLi===0){
+       $( this ).addClass( "changed-li" );
+
+       $(rightPanelParent).append("<span class='label col-sm-12 ' style='color:black;'>"+toAdd+"</span>");
+     }
+
+   }else{
+     if($(this).hasClass("changed-li")){
+
+     }else{
+         $( this ).addClass( "changed-li" );
+          $(rightPanelParent).append("<span class='label col-sm-12 ' style='color:black;'>"+toAdd+"</span>");
+     }
+
+
+
+   }
+
+   // var y=e.target.parentNode.id;
+   //
+   //
+   // console.log($('div').find('#'+y).attr('class'));
+   //
+   // $("#results").append("<span class='label' style='color:black'>"+toAdd+"</span>");
+  });
+  $('.butns').click(function(e){
+    var parentUL=e.target.parentNode.id;
+    var tabName=e.target.parentNode.parentNode;
+    console.log(parentUL);
+    // console.log(tabName);
+    $(tabName).find('li').each(function(){
+        console.log($(this).find('h4').text());
+    });
+
+  });
+  // console.log(y);
+  // console.log($('ul').find('#'+y).attr('class'));
+  // var rightPanelParent=$('ul').find('#'+y);
+  // $(rightPanelParent).append("<li class='label' style='color:black;display:inline-block'>"+toAdd+"</li>");
+  // console.log(y.parent().attr('id'));
+</script>

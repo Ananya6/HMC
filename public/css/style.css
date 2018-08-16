@@ -1,0 +1,167 @@
+.w3-image{max-width:100%;height:auto}img{vertical-align:middle}a{color:inherit}
+.w3-display-container{
+  position: relative;
+  height: 360px;
+  width:100%;
+}
+
+
+.mySlides{
+  height: auto;
+  width:100%;
+  max-height:100%;
+}
+.row-first{
+  padding-top: 20px ;
+}
+
+.row-content{
+  padding-top: 50px ;
+}
+
+.inner-row-content{
+  margin-top: 10px;
+}
+
+.preorder{
+  border: 2px #e1e1d0 ridge;
+  margin: 5px 20px 0 20px;
+}
+
+.preorder-btn{
+  width:80%;
+}
+.display-left{border-radius: 40%; border:1px solid 	#101010;
+   background-color: inherit;
+   color: 	#101010	;
+  position:absolute;top:50%;left:0%;transform:translate(0%,-50%);-ms-transform:translate(-0%,-50%)}
+.display-right{
+  border-radius: 40%; border:1px solid 	#101010;
+     background-color: inherit;
+     color: 	#101010	;
+     position:absolute;top:50%;right:0%;
+     transform:translate(0%,-50%);
+     -ms-transform:translate(0%,-50%)
+   }
+
+.item-container {
+  margin:auto;
+  width:100%;
+  padding: 3%;
+  border-bottom: 2px solid whitesmoke;
+   }
+.item {
+       background:white;
+   }
+
+
+.item-img-container{
+  height: 250px;
+  padding: 3%!important;
+
+}
+
+.item-img{
+  max-height: auto;
+  max-height:100%;
+  max-width: 100%;
+}
+
+.spac{
+  margin-top: 4px!important;
+}
+.offer{
+  padding: 3px 0 3px 0;
+}
+
+
+section {
+    padding: 60px 0;
+}
+
+section .section-title {
+    text-align: center;
+    color: #007b5e;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+
+
+.card {
+  display: flex;
+  min-width: 100%;
+  min-height: 200px;
+  overflow-x: auto;
+}
+.card::-webkit-scrollbar {
+  display: none;
+}
+.card--content {
+  background-color: #ecf0f1;
+  min-width: 200px;
+  margin: 5px;
+  padding: 5px;
+  color: #34495e
+}
+
+.mid{
+    margin:0 80px 0 80px!important;
+}
+
+.not-mid{
+    margin:0 40px 0 40px!important;
+}
+
+.img-container-lg{
+
+padding: 5px!important;
+}
+
+
+.img-lg{
+  max-height: auto;
+  max-height:100%;
+  max-width: 90%;
+}
+.category{
+  border: 2px solid #e2e2e2;
+}
+.pad-category{
+  margin:0 2px 0 2px!important;
+
+}
+.why{
+  margin: 4%;
+  padding: 1%;
+  border: 2px #e1e1d0 ridge;
+}
+.review-box{
+  margin: 3%;
+  padding: 1%;
+  border: 2px #e1e1d0 ridge;
+  height: 200px;
+}
+.stars-outer {
+  display: inline-block;
+  position: relative;
+  font-family: FontAwesome;
+}
+
+.stars-outer::before {
+  content: "\f006 \f006 \f006 \f006 \f006";
+}
+
+.stars-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+}
+
+.stars-inner::before {
+  content: "\f005 \f005 \f005 \f005 \f005";
+  color: #f8ce0b;
+}

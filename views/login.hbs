@@ -1,0 +1,47 @@
+<style>
+input {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  width: 50%;
+  border-bottom: 1px solid #dededf;
+  margin: 2%;
+}
+.log{
+  margin: 5%;
+}
+.sub{
+  margin: 3%;
+
+}
+</style>
+<div class="container ">
+  <div class="col-sm-6 col-sm-offset-3 text-center box-in-middle">
+    <h1> Login</h1>
+    <h4> Welcome Back ! Nice to see you again </h4>
+    {{#if hasErrors}}
+      <div class="alert alert-danger">
+        {{#each messages}}
+          <p>*{{this}}</p>
+        {{/each}}
+      </div>
+    {{/if}}
+    <form action="/login" method="post" class="log">
+      <div class="input">
+        <label for='mobile'>Mobile No.</label>
+        <input type="text" id="mobile" name="mobile">
+      </div>
+
+      <div class="input">
+        <label for='password'>Password</label>
+        <input type="password" id="password" name="password">
+      </div>
+
+      <!-- <input type="text" name="id"/> -->
+      <input type="hidden" name="_csrf" value="{{csrfToken}}">
+      <button class="green-btn btn-success sub btn-md" type="submit">Login</button>
+
+    </form>
+  <h5> No account yet?<a href="/register"> Sign Up</a></h5>
+  </div>
+</div>

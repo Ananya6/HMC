@@ -1,0 +1,235 @@
+<link rel="stylesheet" href="./css/customize.css">
+
+<div class="container" style="margin-bottom: 50px;">
+ <div class="row text-center">
+    <h1>CUSTOMIZE</h1>
+    <p>Add items according to your taste buds</p>
+<div class=" col-xs-10 col-xs-offset-1" style="border: 2px dashed #e2e2e2; padding: 25px;margin-top: 25px;">
+
+<div class="row">
+  <div class="col-md-5">
+    <img src="/images/{{product.ImageUrl}}" width="90%">
+    </div>
+
+    <div class="col-md-7">
+
+      <div class="row">
+      <div class="col-md-10">
+      <p style="margin-top: 10px; font-size: 25px; font-weight: 300;" class="text-center">{{product.ProductName}}</p>
+      <hr style="margin-top: 10px;border-top:2px solid #aaa"/>
+      </div>
+      <div class="col-md-2 text-center">
+      <img src='/images/veg-mark.png' width="30px" height="30px">
+  </div>
+  </div>
+
+  <!-- <div class="add_to_cart"><a href="#" class="deliver-button-2">Add To Cart</a></div> -->
+  <div class="row" align="left">
+      <p style="font-weight: bold;"> Price: &#8377;{{product.Price}}</p>
+
+      <p style=""><b> Special Ingredient : </b><span style="color:#555">{{product.Ingredients}}</span></p>
+
+      <p style=" font-weight: bold;"> Nutritional Values :</p>
+  </div>
+  <div class="row">
+      <div class="col-md-2 col-xs-3 text-center">
+        <p>{{product.Calories}}<br><span style="font-size: 10px">Calories</span></p>
+      </div>
+      <div class="col-md-2 col-xs-3 text-center">
+        <p>{{product.Protein}}g<br><span style="font-size: 10px">Protein</span></p>
+      </div>
+      <div class="col-md-2 col-xs-3 text-center">
+        <p>{{product.Fats}}g<br><span style="font-size: 10px">Fat</span></p>
+      </div>
+      <div class="col-md-2 col-xs-3 text-center">
+        <p>{{product.Fibers}}g<br><span style="font-size: 10px">Fibres</span></p>
+      </div>
+      </div>
+  </div>
+</div>
+
+   <div class="row" align="left">
+
+
+<div class="col-md-12 ">
+  <h4 > ABOUT THE MEAL</h4>
+<p style="text-align: justify;" > {{product.Description}} </p>
+</div>
+</div>
+
+</div>
+
+  <div class="row text-center" >
+    <div class="col-lg-8 col-lg-offset-2 " style="padding-top: 4%;">
+     <div class="row" id="customizations">
+      {{#each customizations}}
+
+         {{#each this}}
+            <div class="col-sm-6  col-xs-12" style="margin:20px 0px 0px 0px" id="{{@key}}">
+               <p><span style="border:2px solid #aaa; padding:5px 10px 5px 15px" id="typeOfCustomization">{{@key}}</span></p>
+               <br/ >
+
+               {{#each this}}
+                <div class="row text-center" >
+                  <label class="container_check">{{this}}
+                    <input name="{{@key}}" type="checkbox" value="{{this}}">
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+                {{/each}}
+            </div>
+         {{/each}}
+
+       {{/each}}
+     </div>
+    </div>
+   </div>
+
+
+
+<!-- <div class="row">
+  <label class="container_check">Ingredient 2
+    <input type="checkbox" >
+    <span class="checkmark"></span>
+</label>
+</div>
+
+<div class="row">
+  <label class="container_check">Ingredient 3
+    <input type="checkbox" >
+    <span class="checkmark"></span>
+</label>
+</div>
+
+<div class="row">
+  <label class="container_check">Ingredient 4
+    <input type="checkbox" >
+    <span class="checkmark"></span>
+</label>
+</div> -->
+
+
+<div class="text-center row" style="margin: 50px 0px 50px 0px">
+    <p><span style="border:2px solid #aaa; padding:5px 40px 5px 40px; font-weight: bold ">SIZES</span></p>
+
+    <div class="col-md-8 col-md-offset-2">
+        <div class="row text-center">
+          <div class="col-md-4" style="margin:25px 0px 25px 0px">
+            <label class="container_check" style="font-weight: normal;">HEARTY MEALS
+              <input type="checkbox" value="hearty" name="sizeboxes">
+              <span class="checkmark" style="left:15%;"></span>
+          </label>
+          <div class="hearty_meals">
+            <img style="height:200px; width: 200px;" src="/images/Hearty-Meals.jpg">
+          </div>
+            <p style="text-align: center;">For when you are hungry</p>
+          </div>
+
+          <div class="col-md-4" style="margin:25px 0px 25px 0px">
+            <label class="container_check" style="font-weight: normal;">MAIN MEALS
+              <input type="checkbox" value="main" name="sizeboxes" >
+              <span class="checkmark" style="left:15%;"></span>
+          </label>
+
+          <div class="main_meals">
+            <img class="main_meals_img" src="/images/Main-Meals.jpg">
+          </div>
+            <p style="text-align: center;"> For a perfect day</p>
+          </div>
+
+          <div class="col-md-4" style="margin:25px 0px 25px 0px">
+            <label class="container_check" style="font-weight: normal;">MINI MEALS
+              <input type="checkbox" value="mini" name="sizeboxes">
+              <span class="checkmark" style="left:15%;"></span>
+          </label>
+
+          <div class="mini_meals">
+            <img class="mini_meals_img" src="/images/Mini-Meals.jpg">
+          </div>
+            <p style="text-align: center;"> Light meal or snack</p>
+          </div>
+          </div>
+    </div>
+  </div>
+
+  <div style="margin: 30px 0px 0px 0px;" class="text-center">Satisfied with your selection.<br>Add to your cart and order.</div>
+    <form class="form text-center" method="post" action="/cust-add-to-cart">
+    <input type="hidden" id="custom1" name="custom1"/>
+    <input type="hidden" id="custom1selections" name="custom1selections"/>
+    <input type="hidden" id="custom2" name="custom2"/>
+    <input type="hidden" id="custom2selections" name="custom2selections"/>
+    <input type="hidden" id="size" name="size"/>
+    <input type="hidden" id="ObjectId" name="ObjectId" value="{{product._id}}" />
+    <button style="margin: 25px 0px 0px 0px; text-align: center" id="addtocart" type="submit" class="deliver-button-2">ADD TO CART</button>
+    </form>
+</div>
+<script>
+$('input[name="sizeboxes"]').on('click', function() {
+  var $box = $(this);
+  if ($box.is(":checked")) {
+    // the name of the box is retrieved using the .attr() method
+    // as it is assumed and expected to be immutable
+    var group = "input:checkbox[name='" + $box.attr("name") + "']";
+    // the checked state of the group/box on the other hand will change
+    // and the current value is retrieved using .prop() method
+    $(group).prop("checked", false);
+    $box.prop("checked", true);
+  } else {
+    $box.prop("checked", false);
+  }
+   // $(this).siblings('input[name="sizeboxes"]').not(this).prop('checked', false);
+});
+// var newObj={'blue':'green'};
+// $("#custom1").val(function(n, c){
+//           return newObj;
+//  });
+ var divArray=$("#customizations").children("div");
+ var div0ID=divArray.get(0).id;
+ var div1ID=divArray.get(1).id;
+ $("#custom1").val(function(n, c){
+           return div0ID;
+  });
+  $("#custom2").val(function(n, c){
+           return div1ID;
+   });
+  var child0=$(divArray.get(0)).find("input");
+  var child1=$(divArray.get(1)).find("input");
+   $('#addtocart').click(function () {
+     var custom1selection=[];
+    $(child0).each(function()
+     {
+         if($(this).is(':checked'))
+           custom1selection.push($(this).val());
+     });
+      console.log(custom1selection);
+      $("#custom1selections").val(function(n, c){
+                return custom1selection;
+       });
+      var custom2selection=[];
+      $(child1).each(function()
+       {
+           if($(this).is(':checked'))
+             custom2selection.push($(this).val());
+       });
+      $("#custom2selections").val(function(n, c){
+               return custom2selection;
+       });
+     // $('input:checkbox[name=0]').each(function()
+     //  {
+     //      if($(this).is(':checked'))
+     //        custom1selections.push($(this).val());
+     //  });
+
+
+       //   var custom2selection=[];
+       //  $('input[name="1"]:checked').each(function() {
+       //    custom2selection.push(this.value);
+       //    console.log(this.value);
+       // });
+       //
+
+        $("#size").val(function(n, c){
+                return ($('input[name="sizeboxes"]:checked').val());
+         });
+   });
+</script>
