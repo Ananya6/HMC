@@ -165,3 +165,8 @@ padding: 5px!important;
   content: "\f005 \f005 \f005 \f005 \f005";
   color: #f8ce0b;
 }
+.butns{
+  background:#0f7e4c;
+  border: solid 1px #0f7e4c;
+  padding: 2px 32px;
+}

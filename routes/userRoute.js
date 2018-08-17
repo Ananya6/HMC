@@ -38,7 +38,7 @@ Rout.use(morgan('dev'));
 
 Rout.use('/',notLoggedIn,(req,res,next)=>{
   next();
-})
+});
 Rout.route('/register')
   .all((req,res,next)=>{
     res.statusCode=200;

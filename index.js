@@ -75,7 +75,6 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
-
 app.engine('hbs',hbs({extname:'hbs' ,defaultLayout:'layout'}));
 app.set('views',path.join(__dirname,'views'));
 app.set('view-engine','hbs');
@@ -88,6 +87,7 @@ app.use((req,res,next)=>{
   res.locals.session=req.session;
   console.log(req.session);
   console.log(req.isAuthenticated());
+
   next();
 });
 authRouter(app);
@@ -96,58 +96,57 @@ app.use('/home',homeRout);
 app.use('/menu',menuRout);
 
 // app.use('/',authRouter);
-app.use('/',cartRout);
+
 
 app.use('/',ownMealRout);
+app.use('/',cartRout);
 app.use('/',userRout);
-app.get('/newpage',function(req,res){
-  res.render()
-});
-app.get('/scrape', function(req, res){
-    // The URL we will scrape from - in our example Anchorman 2.
-  res.render('newpage.hbs');
-   const  url='http://localhost:5000/scrape';
-// const $=cheerio.load('http://localhost:5000/scrape');
-//   //   const $ = cheerio.load('<ul id="fruits"><li class="apple">ple</li><li class="orange">Orange</li><li class="pear">Pear</li></ul>');
-//   console.log($('.apple', '#fruits').text());
 
-  request(url, function(error, response, html){
-
-      // First we'll check to make sure no errors occurred when making the request
-       console.log('inside');
-
-      if(!error){
-          // Next, we'll utilize the cheerio library on the returned html which will essentially give us jQuery functionality
-
-          var $ = cheerio.load(html);
-
-          // Finally, we'll define the variables we're going to capture
-         console.log($('.apple', '#fruits').text());
-      }
-
-    // url = 'http://www.imdb.com/title/tt1229340/';
-    //
-    // // The structure of our request call
-    // // The first parameter is our URL
-    // // The callback function takes 3 parameters, an error, response status code and the html
-    //
-    // request(url, function(error, response, html){
-    //
-    //     // First we'll check to make sure no errors occurred when making the request
-    //
-    //     if(!error){
-    //         // Next, we'll utilize the cheerio library on the returned html which will essentially give us jQuery functionality
-    //
-    //         var $ = cheerio.load(html);
-    //
-    //         // Finally, we'll define the variables we're going to capture
-    //
-    //         var title, release, rating;
-    //         var json = { title : "", release : "", rating : ""};
-    //         console.log(json);
-    //     }
-  });
-});
+// app.get('/scrape', function(req, res){
+//     // The URL we will scrape from - in our example Anchorman 2.
+//   res.render('newpage.hbs');
+//    const  url='http://localhost:5000/scrape';
+// // const $=cheerio.load('http://localhost:5000/scrape');
+// //   //   const $ = cheerio.load('<ul id="fruits"><li class="apple">ple</li><li class="orange">Orange</li><li class="pear">Pear</li></ul>');
+// //   console.log($('.apple', '#fruits').text());
+//
+//   request(url, function(error, response, html){
+//
+//       // First we'll check to make sure no errors occurred when making the request
+//        console.log('inside');
+//
+//       if(!error){
+//           // Next, we'll utilize the cheerio library on the returned html which will essentially give us jQuery functionality
+//
+//           var $ = cheerio.load(html);
+//
+//           // Finally, we'll define the variables we're going to capture
+//          console.log($('.apple', '#fruits').text());
+//       }
+//
+//     // url = 'http://www.imdb.com/title/tt1229340/';
+//     //
+//     // // The structure of our request call
+//     // // The first parameter is our URL
+//     // // The callback function takes 3 parameters, an error, response status code and the html
+//     //
+//     // request(url, function(error, response, html){
+//     //
+//     //     // First we'll check to make sure no errors occurred when making the request
+//     //
+//     //     if(!error){
+//     //         // Next, we'll utilize the cheerio library on the returned html which will essentially give us jQuery functionality
+//     //
+//     //         var $ = cheerio.load(html);
+//     //
+//     //         // Finally, we'll define the variables we're going to capture
+//     //
+//     //         var title, release, rating;
+//     //         var json = { title : "", release : "", rating : ""};
+//     //         console.log(json);
+//     //     }
+//   });
+// });
 
 //
 //

@@ -34,8 +34,11 @@ const offerSchema=new Schema({
   },
   Valid:{
     type:Boolean
+  },
+  ProductObjectId:{
+  type:Schema.Types.ObjectId,
+  ref:'product'
   }
-
 },{
     timestamps:true
 });

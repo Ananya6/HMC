@@ -1,131 +1,6 @@
-<style>
-a{
-  color:white;
+<link rel="stylesheet" href="./css/shopping-cart.css">
 
-}
-a:hover{
-  text-decoration: none;
-  color:white;
-  font-weight: 800px;
-}
-.cart-border{
-  margin: 1%;
-  border: 2px dashed #878181;
-}
-
-.cart-img-container{
-
-}
-.cart-img{
-  max-height: auto;
-  max-height:75%;
-  max-width: 100%;
-}
-.content-padding{
-  padding:2% 3%;
-}
-.row-padding{
-  padding:2% 3%;
-}
-.input-group {
-    position: relative;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-    width: 100%;
-}
-.butns{
-  background:#0f7e4c;
-  border: solid 1px #0f7e4c;
-  padding: 2px 32px;
-}
-
-.inputdiv {
-    background-color: #f6fafd;
-    width: 70%;
-    display: flex;
-    justify-content: center;
-    padding: 8px 8px;
-    align-items: center;
-}
-
-span.input-group-btn button {
-    display: flex;
-    align-items: center;
-}
-
-.minus, .plus {
-    background-color: #028958;
-    width: 18px;
-    height: 18px;
-    border: none;
-    color: white;
-
-    border-radius: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.rupees {
-    font-weight: 800;
-
-    padding: 0 10px;
-    background-color: #f6fafd;
-}
-.custom{
-  font-weight: 500;
-  font-size: 12px;
-  padding: 0 8px;
-  background-color: #f6fafd;
-}
-.remove {
-    border: solid 1px #0f7e4c;
-    background-color: #0f7e4c;
-    color: #ffffff;
-    padding: 0 30px;
-    align-self: flex-end;
-}
-.removebutton {
-    height: auto;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-}
-.d-flex {
-    display: -ms-flexbox!important;
-    display: flex!important;
-
-}
-.align-items-end{
-  align-items: flex-end!important;
-}
-#sign {
-    color: #ffffff;
-    width: 18px;
-    height: 18px;
-}
-.grey-line{
-  border-bottom: 2px solid #efefef;
-  padding-top: 1%;
-}
-.margn{
-  margin-top:1%;
-}
-.justify-content-end {
-    -ms-flex-pack: end!important;
-    justify-content: flex-end!important;
-    margin-bottom: 2%;
-}
-.justify-content-center{
-
-    justify-content: flex-center!important;
-}
-</style>
-
-    <div class="modal" id="CartModal" >
+    <div class="modal " id="CartModal" data-keyboard="false" data-backdrop="static">
      <div class="modal-dialog modal-lg">
       <div class="modal-content">
            <div class="cart-border">
@@ -161,10 +36,15 @@ span.input-group-btn button {
                  </div>
                   <p class="margn">Price: <span class="rupees">&#8377;{{this.price}}</span> </p>
                   {{#if this.item.Customization}}
-                    <p>{{this.item.Customization.custom1}}:<span class="custom">{{this.item.Customization.custom1array}}</span> </p>
+                    <p class="newRows">{{this.item.Customization.custom1}}:<span class="custom">{{this.item.Customization.custom1array}}</span> </p>
                     {{#if this.item.Customization.custom2}}
-                    <p >{{this.item.Customization.custom2}}:<span class="custom">{{this.item.Customization.custom2array}}</span> </p>
+                    <p class="newRows">{{this.item.Customization.custom2}}:<span class="custom">{{this.item.Customization.custom2array}}</span> </p>
                     {{/if}}
+                  {{/if}}
+                  {{#if this.item.ownMealCustoms}}
+                   {{#each this.item.ownMealCustoms}}
+                    <p class="newRows">{{@key}}:<span class="custom">{{this}}</span> </p>
+                    {{/each}}
                   {{/if}}
                  <div class="margn removebutton d-flex align-items-end">
                      <button type="button" class=" remove" onclick="location.href = '/removeItem/{{this.item._id}}'">REMOVE</button>
@@ -200,10 +80,7 @@ span.input-group-btn button {
     $(document).ready(function(){
         $("#CartModal").modal('show');
     });
-    $('#CartModal').modal({
-        backdrop: 'static',
-        keyboard: false
-      });
+
 
       $(document).ready(function () {
 

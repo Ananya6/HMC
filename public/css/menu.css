@@ -46,7 +46,7 @@ a:hover{
 .padding-description{
   margin:0 10px 0 10px!important;
   line-height: 1.5;
-  min-height: 170px!importants;
+  min-height: 180px!important;
 }
 .item-box{
   margin: 10px 0 10px 0;
@@ -59,9 +59,9 @@ a:hover{
 
 }
 @media only screen and (max-width: 992px) {
- .mid{
-   margin:0 15px 0 15px!important;
- }
+  .mid{
+    margin:0 20px 0 20px!important;
+  }
  .title {
    font-weight:500px;
    font-size:14px;

@@ -116,6 +116,11 @@
                                {{/each}}
                                {{/each}}
                              </ul>
+                             <form class="form text-center" id="formBurger" method="post" action="/own-add-to-cart">
+                                <input type="hidden" id="type" name="type" value="burger"/>
+                                <input type="hidden" id="custom1" name="custom1"/>
+                                <button class="butns btn-success" type="submit" onclick="showMessage()">Add to Cart</button>
+                           </form>
                            </div>
                          </div>
               </div>
@@ -218,8 +223,9 @@
                            {{/each}}
                          </ul>
                          <form class="form text-center" id="formSalad" method="post" action="/own-add-to-cart">
-                            <!-- <input type="hidden"  id="custom1" name="custom1"/> -->
-                            <button class="butns btn-success" type="submit" >Add to Cart</button>
+                            <input type="hidden" id="type" name="type" value="salad"/>
+                            <input type="hidden"  id="custom1" name="custom1"/>
+                            <button class="butns btn-success" type="submit" onclick="showMessage()">Add to Cart</button>
                        </form>
                        </div>
 
@@ -323,6 +329,11 @@
                            {{/each}}
                            {{/each}}
                          </ul>
+                         <form class="form text-center" id="formSandwich" method="post" action="/own-add-to-cart">
+                            <input type="hidden" id="type" name="type" value="sandwich"/>
+                            <input type="hidden" id="custom1" name="custom1"/>
+                            <button class="butns btn-success" type="submit" onclick="showMessage()">Add to Cart</button>
+                       </form>
                        </div>
 
                      </div>
@@ -405,33 +416,46 @@
                                  {{#each smoothies.CreateYourOwnMeal}}
                                   {{#each this}}
                                 <li class="info_size">
-                                   <div class="title col-sm-2">
+                                   <div class="title col-lg-2 col-xs-4">
                                    <h4 class="title"><b>{{@key}}</b></h4>
                                    </div>
-                                   <div class="results col-sm-10" id="Smoothie{{@key}}"></div>
+                                   <div class="results col-lg-10 col-xs-8" id="Smoothie{{@key}}"></div>
                                  </li>
                                  {{/each}}
                                  {{/each}}
                                  {{#each smoothies.Customizations}}
                                   {{#each this}}
                                  <li class="info_size row" >
-                                   <div class="title col-sm-2">
+                                   <div class="title col-lg-2 col-xs-4">
                                     <h4 class="title"><b>{{@key}}</b></h4>
                                    </div>
-                                   <div id="Smoothie{{@key}}" class="col-sm-10 results" align="right"></div>
+                                   <div id="Smoothie{{@key}}" class="col-lg-10 col-xs-8 results" align="right"></div>
                                  </li>
                                  {{/each}}
                                  {{/each}}
                                </ul>
+                               <form class="form text-center" id="smoothie" method="post" action="/own-add-to-cart">
+                                  <input type="hidden" id="type" name="type" value="smoothie"/>
+                                  <input type="hidden" id="custom1" name="custom1"/>
+                                  <button class="butns btn-success" type="submit" onclick="showMessage()" >Add to Cart</button>
+                             </form>
                              </div>
                         </div>
+                        <div id="snackbar">Added to Cart</div>
+                          </div>
               </div>
+
 
        </div>
      </div>
    </div>
 
 <script>
+function showMessage() {
+    var x = document.getElementById("snackbar");
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 4000);
+}
 $(document).ready(function()
   {
 
@@ -498,12 +522,32 @@ $(document).ready(function()
    // $("#results").append("<span class='label' style='color:black'>"+toAdd+"</span>");
   });
   $('.butns').click(function(e){
-    var parentUL=e.target.parentNode.id;
+    var parentUL=e.target.parentNode;
     var tabName=e.target.parentNode.parentNode;
-    console.log(parentUL);
-    // console.log(tabName);
+    console.log(tabName);
+    var obj=new Object;
     $(tabName).find('li').each(function(){
         console.log($(this).find('h4').text());
+        var value=[]
+        var prop=$(this).find('h4').text();
+        var p=0;
+        $(this).find('span.label').each(function(){
+          if($(this).text()!=null){
+            value.push($(this).text());
+            p=1;
+          }
+        });
+        if(p==1){
+            obj[prop]=value;
+        }
+
+
+    });
+
+    var str=JSON.stringify(obj);
+    console.log(str);
+    $(parentUL).find('#custom1').val(function(n, c){
+                return str;
     });
 
   });

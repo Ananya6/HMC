@@ -18,6 +18,22 @@ module.exports=function Cart(oldCart){
       //considering discount is applicable per item basis
       this.totalDiscount+=storedItem.discount;
   };
+  this.addOwn=function(type,ownMealCustoms){
+    var id= new Date().getUTCMilliseconds();
+    var item=new Object;
+    item._id=id;
+    item.ProductName='Own Meal -'+type.toUpperCase();
+    item.PriceDisplay=380;
+    item.Price=200;
+    item.ImageUrl=type+'1.jpg';
+    item.ownMealCustoms=ownMealCustoms;
+    console.log(item);
+    var storedItem=this.items[id]={item: item,qty:1,price:item.PriceDisplay,discount:30};
+    this.totalQty++;
+    this.totalPrice+=storedItem.item.PriceDisplay;
+    this.totalDiscount+=storedItem.discount;
+
+  };
 
   this.generateArray= function(){
     var itemArray=[];
@@ -34,10 +50,10 @@ module.exports=function Cart(oldCart){
     console.log('price is:');
     console.log(storedItems[id].price);
     this.totalQty=this.totalQty-storedItems[id].qty;
-    this.totalPrice-=storedItems[id].price;
-
+    console.log(this.totalQty);
+    this.totalPrice=this.totalPrice-storedItems[id].price;
+    console.log(this.totalPrice);
     this.totalDiscount-=storedItems[id].discount;
     delete storedItems[id];
-
   }
 };

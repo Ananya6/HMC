@@ -1,4 +1,4 @@
-<!-- <h1>{{title}}</title> -->
+
 <link rel="stylesheet" href="./css/menu.css">
 
 <div class="container">
@@ -10,7 +10,7 @@
 
 <div class="row mid">
 
-  <ul class="nav nav-pills nav-justified ">
+  <ul class="nav nav-pills nav-justified " id="#myTabs">
     <li class="active"><a data-toggle="pill" href="#home">BURGER</a></li>
     <li><a data-toggle="pill" href="#salad">SALAD</a></li>
     <li><a data-toggle="pill" href="#sandwich">SANDWICH</a></li>
@@ -30,7 +30,7 @@
         <div class="tab-content">
             <div id="allBurger" class="tab-pane fade in active text-center">
               {{# each allBurger}}
-                <div class=" col-md-4 col-sm-6 img-container-lg" >
+                <div class=" col-md-4 col-xs-6 img-container-lg" >
                 <div class="row" >
                   <img src="./images/{{this.ImageUrl}}" class="img-lg"/>
                 </div>
@@ -65,7 +65,7 @@
 
                 <div id="vBurger" class="tab-pane fade text-center ">
                   {{# each vegBurger}}
-                    <div class=" col-md-4 col-sm-6 img-container-lg" >
+                    <div class=" col-md-4 col-xs-6 img-container-lg" >
                     <div class="row" >
                       <img src="./images/{{this.ImageUrl}}" class="img-lg"/>
                     </div>
@@ -96,7 +96,7 @@
 
                   <div id="nvBurger" class="tab-pane fade text-center ">
                     {{# each nVegBurger}}
-                    <div class=" col-md-4 col-sm-6 img-container-lg" >
+                    <div class=" col-md-4 col-xs-6 img-container-lg" >
                     <div class="row" >
                       <img src="./images/{{this.ImageUrl}}" class="img-lg"/>
                     </div>
@@ -138,7 +138,7 @@
           <div class="tab-content">
               <div id="allSalad" class="tab-pane fade in active text-center">
                 {{# each allSalad}}
-                  <div class=" col-md-4 col-sm-6 img-container-lg" >
+                  <div class=" col-md-4 col-xs-6 img-container-lg" >
                   <div class="row" >
                     <img src="./images/{{this.ImageUrl}}" class="img-lg"/>
                   </div>
@@ -173,7 +173,7 @@
 
                   <div id="vSalad" class="tab-pane fade text-center ">
                     {{# each vegSalad}}
-                      <div class=" col-md-4 col-sm-6 img-container-lg" >
+                      <div class=" col-md-4 col-xs-6 img-container-lg" >
                       <div class="row" >
                         <img src="./images/{{this.ImageUrl}}" class="img-lg"/>
                       </div>
@@ -204,7 +204,7 @@
 
                     <div id="nvSalad" class="tab-pane fade text-center ">
                       {{# each nVegSalad}}
-                      <div class=" col-md-4 col-sm-6 img-container-lg" >
+                      <div class=" col-md-4 col-xs-6 img-container-lg" >
                       <div class="row" >
                         <img src="./images/{{this.ImageUrl}}" class="img-lg"/>
                       </div>
@@ -243,7 +243,7 @@
           <div class="tab-content">
             <div id="allSandwich" class="tab-pane fade in active text-center">
               {{# each allSandwich}}
-                <div class=" col-md-4 col-sm-6 img-container-lg" >
+                <div class=" col-md-4 col-xs-6 img-container-lg" >
                 <div class="row" >
                   <img src="./images/{{this.ImageUrl}}" class="img-lg"/>
                 </div>
@@ -278,7 +278,7 @@
 
                 <div id="vSandwich" class="tab-pane fade text-center ">
                   {{# each vegSandwich}}
-                    <div class=" col-md-4 col-sm-6 img-container-lg" >
+                    <div class=" col-md-4 col-xs-6 img-container-lg" >
                     <div class="row" >
                       <img src="./images/{{this.ImageUrl}}" class="img-lg"/>
                     </div>
@@ -309,7 +309,7 @@
 
                   <div id="nvSandwich" class="tab-pane fade text-center ">
                     {{# each nVegSandwich}}
-                    <div class=" col-md-4 col-sm-6 img-container-lg" >
+                    <div class=" col-md-4 col-xs-6 img-container-lg" >
                     <div class="row" >
                       <img src="./images/{{this.ImageUrl}}" class="img-lg"/>
                     </div>
@@ -339,7 +339,7 @@
         </div>
         <div id="smoothie" class="tab-pane fade text-center" style="padding-top:4%">
           {{# each allSmoothie}}
-          <div class=" col-md-4 col-sm-6 img-container-lg" >
+          <div class=" col-md-4 col-xs-6 img-container-lg" >
           <div class="row" >
             <img src="./images/{{this.ImageUrl}}" class="img-lg"/>
           </div>
@@ -381,7 +381,7 @@
              </div> -->
             <div class="row text-center">
               <form role="form" method="post" action="/customize">
-                <input type="text" name="ObjectId" value=""/>
+                <input type="hidden" name="ObjectId" value=""/>
                 <button class="btn btn-md btn-success" type="submit" align="center" >
                        Customize your meal</button>
               </form>
@@ -419,8 +419,20 @@
 
     $(e.currentTarget).find('input[name="ObjectId"]').val(sentObjId);
     $(e.currentTarget).find('a[href]').attr('href', '/add-to-cart/'+sentObjId);
-});
+    });
+    $(document).ready(function()
+      {
+    //     var url = document.location.toString();
+    // if (url.match('#')) {
+    //     $('.nav-pills a[href="#' + url.split('#')[1] + '"]').tab('show');
+    // }
+    //
+    // // Change hash for page-reload
+    // $('.nav-pills a').on('shown.bs.tab', function (e) {
+    //     window.location.hash = e.target.hash;
+    // });
 
+  });
 //     $(document).on("click", ".sendToModal", function () {
 //      var sentObjId = $(this).data('id');
 //      console.log(sentObjId);

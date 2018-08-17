@@ -87,6 +87,8 @@ Rout.route('/removeItem/:id')
     .get((req,res,next)=>{
       var cart=new Cart(req.session.cart);
       cart.remove(req.params.id);
+      req.session.cart=cart;
+      req.session.save();
       res.redirect('/cart');
         // if(!req.session.cart){
         //   return res.render('shopping-cart.hbs',{products:null});
@@ -107,17 +109,17 @@ Rout.route('/cart')
         return res.render('shopping-cart.hbs',{products:null});
       }
       var cart=new Cart(req.session.cart);
-    
+
       res.render('shopping-cart.hbs',{products:cart.generateArray(),totPrice: cart.totalPrice});
 
   });
 
-Rout.route('/checkout',isLoggedIn)
+Rout.route('/checkout')
     .all((req,res,next)=>{
       res.statusCode=200;
       next();
     })
-    .get((req,res,next)=>{
+    .get(isLoggedIn,(req,res,next)=>{
       if(!req.session.cart){
         return res.render('shopping-cart.hbs',{products:null});
       }

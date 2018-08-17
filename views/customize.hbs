@@ -160,10 +160,20 @@
     <input type="hidden" id="custom2selections" name="custom2selections"/>
     <input type="hidden" id="size" name="size"/>
     <input type="hidden" id="ObjectId" name="ObjectId" value="{{product._id}}" />
-    <button style="margin: 25px 0px 0px 0px; text-align: center" id="addtocart" type="submit" class="deliver-button-2">ADD TO CART</button>
+    <button style="margin: 25px 0px 0px 0px; text-align: center" id="addtocart" type="submit" onclick="showMessage()" class="deliver-button-2">ADD TO CART</button>
     </form>
+    <div id="snackbar">Added to Cart</div>
+      </div>
+</div>
+
+
 </div>
 <script>
+function showMessage() {
+    var x = document.getElementById("snackbar");
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 4000);
+}
 $('input[name="sizeboxes"]').on('click', function() {
   var $box = $(this);
   if ($box.is(":checked")) {

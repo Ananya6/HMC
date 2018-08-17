@@ -15,8 +15,11 @@
         <img src="./images/{{this.OfferPicUrl}}" class="item-img"/>
       </div>
       <div class="row" >
-      <div class="category offer spac" >
-        <button type="btn btn-xs" >Pre-Order</button>
+      <div class="category offer " >
+        <form role="form" method="post" action="/customize" style="margin:0px">
+        <input type="hidden" name="ObjectId" value="{{this.ProductObjectId}}"/>
+        <button type="butns btn btn-xs" type="submit">Pre-Order</button>
+      </form>
         </div>
       </div>
       </div>
@@ -37,7 +40,9 @@
         <div class=" col-lg-3 col-sm-6 img-container-lg" >
 
         <div class="row">
-          <img src="./pics/HMCpics/burger.jpg" class="img-lg"/>
+          <a href="/menu"  >
+          <img src="./images/burger1.jpg" class="img-lg"/>
+          </a>
         </div>
         <div class="row pad-category" >
         <div class="category">
@@ -48,7 +53,9 @@
 
         <div class="col-lg-3 col-sm-6 img-container-lg" >
           <div class="row ">
-          <img src="./pics/HMCpics/salad1.jpg" class="img-lg"/>
+              <a href="/menu"  >
+          <img src="./images/salad1.jpg" class="img-lg"/>
+        </a>
         </div>
           <div class="row pad-category" >
           <div class="category" >
@@ -60,7 +67,9 @@
       <div class="col-lg-3 col-sm-6 img-container-lg" >
 
           <div class="row">
-        <img src="./pics/HMCpics/sandwich.jpg" class="img-lg"/>
+          <a href="/menu"  >
+        <img src="./images/sandwich3.jpg" class="img-lg"/>
+          </a >
         </div>
         <div class="row pad-category" >
           <div class="category">
@@ -70,11 +79,15 @@
     </div>
     <div class="col-lg-3 col-sm-6 img-container-lg" >
         <div class="row">
-      <img src="./pics/HMCpics/smoothie.jpg" class="img-lg"/>
+          <a href="/menu"  >
+      <img src="./images/smoothie.jpg" class="img-lg" />
+    </a>
       </div>
       <div class="row pad-category" >
       <div class="category">
-        <p>SMOOTHIE</p>
+        <p>
+        <a href="/menu">SMOOTHIE</a>
+        <p>
       </div>
   </div>
 </div>
@@ -95,7 +108,7 @@
       </div>
       <div class="row pad-category" >
       <div class="category ">
-        <button type="btn btn-small spac">Pre-Order</button>
+        <button type="btn butns btn-small spac">Pre-Order</button>
       </div>
     </div>
       </div>

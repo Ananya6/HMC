@@ -160,9 +160,25 @@ console.log(objId);
   .post((req,res,next)=>{
     console.log("Object pass");
     console.log('post');
+    console.log(req.body.custom1);
+    var type=req.body.type;
+    var object=req.body.custom1;
+    var objJSON=JSON.parse(object);
+
+    // for (var key in obj) {
+    //   if (obj.hasOwnProperty(key)) {
+    //     var val = obj[key];
+    //     console.log(key);
+    //     console.log(val);
+    //   }
+    // }
+    var cart=new Cart(req.session.cart? req.session.cart :{});
+    cart.addOwn(type,objJSON);
+    req.session.cart=cart;
+    req.session.save();
     setTimeout(function(){
       res.redirect('/home');
-    },8000);
+    },4000);
     // var custom1=req.body.custom1;
     // var custom2=req.body.custom2;
 });

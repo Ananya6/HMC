@@ -62,52 +62,6 @@ Rout.route('/')
 
       }).catch((err)=>next(err));
 
-      // products.find({CategoryName:'Burgers',SoldOut:false,Veg:true},
-      // {ProductName:1,Veg:1,PriceDisplay:1,Calories:1,Ingredients:1,ImageUrl:1,})
-      // .limit(6)
-      // .then((docs)=>{
-      //
-      //   res.render('menu.hbs',{title:'Hola', vegBurger:docs});
-      //
-      // }).catch((err)=>next(err));
-      //
-      // console.log("Veg Burgers");
-      // console.log(vegBurger);
-      //
-      // products.find({CategoryName:'Burgers',SoldOut:false,Veg:false},
-      // {ProductName:1,Veg:1,PriceDisplay:1,Calories:1,Ingredients:1,ImageUrl:1,})
-      // .limit(6)
-      // .then((docs)=>{
-      //     res.render('menu.hbs',{title:'Hola', nvegBurger:docs});
-      //
-      // }).catch((err)=>next(err));
-      //
-      // products.find({CategoryName:'Sandwich',SoldOut:false},
-      // {ProductName:1,Veg:1,PriceDisplay:1,Calories:1,Ingredients:1,ImageUrl:1,})
-      // .limit(6)
-      // .then((docs)=>{
-      //   allSandwich=docs;
-      //
-      // }).catch((err)=>next(err));
-
-      // products.find({CategoryName:'Sandwich',SoldOut:false,Veg:true},
-      // {ProductName:1,Veg:1,PriceDisplay:1,Calories:1,Ingredients:1,ImageUrl:1,})
-      // .limit(6)
-      // .then((docs)=>{
-      //   vegSandwich=docs;
-      //
-      // }).catch((err)=>next(err));
-
-      // products.find({CategoryName:'Sandwich',SoldOut:false,Veg:false},
-      // {ProductName:1,Veg:1,PriceDisplay:1,Calories:1,Ingredients:1,ImageUrl:1,})
-      // .limit(6)
-      // .then((docs)=>{
-      //   nVegSandwich=docs;
-      //
-      // }).catch((err)=>next(err));
-
-
-      // res.render('menu.hbs',{title:'Hola', allBurger:allBurger,vegBurger:vegBurger,nVegBurger,allSandwich,vegSandwich,nVegSandwich});
 
       })
 .post((req,res,next)=>{
