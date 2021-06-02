@@ -5,10 +5,10 @@ This website is used for ordering meals online- customising the meals from scrat
 
 It includes below modules:
 
-Home page(with offers/discounts and attractive carousal, testimonial and links to all other pages)
-Login page
-Cart
-Main meal page
-Customising own mean from scratch 
-Order summary page
+Home page(with offers/discounts and attractive carousal, testimonial and links to all other pages)\n
+Login page \n
+Cart </br>
+Main meal page </br>
+Customising own mean from scratch </br>
+Order summary page</br>
 
