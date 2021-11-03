@@ -32,7 +32,7 @@
     "request": "^2.88.0",
     "sms-gateway-nodejs": "^0.1.0",
     "textmagic-rest-client": "^1.0.10",
-    "validator": "^10.4.0"
+    "validator": "^13.7.0"
   },
   "devDependencies": {},
   "scripts": {
